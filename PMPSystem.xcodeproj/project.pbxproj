@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		01ECF91CF13D230E4B9775F2 /* Pods_PMPSystemTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62DE49AE4EFEA96B0DF07A /* Pods_PMPSystemTests.framework */; };
+		0AEA20A8216ED3F5009214A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AEA20A7216ED3F5009214A5 /* Assets.xcassets */; };
 		0DF5F2D04BCB451B0B887942 /* Pods_PMPSystemUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68E5DB340C5F4EF55EC2AC5 /* Pods_PMPSystemUITests.framework */; };
 		16A75500A0F238E2559573A7 /* Pods_PMPSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8739B6EB68EEB82E9BBFFB /* Pods_PMPSystem.framework */; };
 		A7109A4A216A0A7200E3C029 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7109A49216A0A7200E3C029 /* AppDelegate.swift */; };
 		A7109A4C216A0A7200E3C029 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7109A4B216A0A7200E3C029 /* ViewController.swift */; };
 		A7109A4F216A0A7200E3C029 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7109A4D216A0A7200E3C029 /* Main.storyboard */; };
 		A7109A52216A0A7200E3C029 /* PMPSystem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A7109A50216A0A7200E3C029 /* PMPSystem.xcdatamodeld */; };
-		A7109A54216A0A7700E3C029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7109A53216A0A7700E3C029 /* Assets.xcassets */; };
 		A7109A57216A0A7700E3C029 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7109A55216A0A7700E3C029 /* LaunchScreen.storyboard */; };
 		A7109A62216A0A7700E3C029 /* PMPSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7109A61216A0A7700E3C029 /* PMPSystemTests.swift */; };
 		A7109A6D216A0A7800E3C029 /* PMPSystemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7109A6C216A0A7800E3C029 /* PMPSystemUITests.swift */; };
@@ -40,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AEA20A7216ED3F5009214A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E63D1109ECEA691B724A5DE /* Pods-PMPSystemUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMPSystemUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PMPSystemUITests/Pods-PMPSystemUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2AB8084F4FD624BFE3DE527B /* Pods-PMPSystemTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMPSystemTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PMPSystemTests/Pods-PMPSystemTests.debug.xcconfig"; sourceTree = "<group>"; };
 		76ABFAEDC253111C97D86218 /* Pods-PMPSystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMPSystem.release.xcconfig"; path = "Pods/Target Support Files/Pods-PMPSystem/Pods-PMPSystem.release.xcconfig"; sourceTree = "<group>"; };
@@ -51,7 +52,6 @@
 		A7109A4B216A0A7200E3C029 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A7109A4E216A0A7200E3C029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7109A51216A0A7200E3C029 /* PMPSystem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PMPSystem.xcdatamodel; sourceTree = "<group>"; };
-		A7109A53216A0A7700E3C029 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7109A56216A0A7700E3C029 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7109A58216A0A7700E3C029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7109A5D216A0A7700E3C029 /* PMPSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PMPSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +98,7 @@
 		A7109A3D216A0A7200E3C029 = {
 			isa = PBXGroup;
 			children = (
+				0AEA20A7216ED3F5009214A5 /* Assets.xcassets */,
 				A7109A7E216A5CD100E3C029 /* GoogleService-Info.plist */,
 				A7109A48216A0A7200E3C029 /* PMPSystem */,
 				A7109A60216A0A7700E3C029 /* PMPSystemTests */,
@@ -125,7 +126,6 @@
 				A7109A4B216A0A7200E3C029 /* ViewController.swift */,
 				A7109A7A216A18B200E3C029 /* LoginViewController.swift */,
 				A7109A4D216A0A7200E3C029 /* Main.storyboard */,
-				A7109A53216A0A7700E3C029 /* Assets.xcassets */,
 				A7109A55216A0A7700E3C029 /* LaunchScreen.storyboard */,
 				A7109A58216A0A7700E3C029 /* Info.plist */,
 				A7109A50216A0A7200E3C029 /* PMPSystem.xcdatamodeld */,
@@ -284,7 +284,7 @@
 			files = (
 				A7109A57216A0A7700E3C029 /* LaunchScreen.storyboard in Resources */,
 				A7109A7F216A5CD100E3C029 /* GoogleService-Info.plist in Resources */,
-				A7109A54216A0A7700E3C029 /* Assets.xcassets in Resources */,
+				0AEA20A8216ED3F5009214A5 /* Assets.xcassets in Resources */,
 				A7109A4F216A0A7200E3C029 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
