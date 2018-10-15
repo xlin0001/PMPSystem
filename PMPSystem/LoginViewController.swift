@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var inputsContainerHeightAnchor: NSLayoutConstraint?
     var passwordAgainHeightAnchor: NSLayoutConstraint?
@@ -70,14 +70,18 @@ class LoginViewController: UIViewController {
         return textField
     }()
     
-    let identityImageView: UIImageView = {
+    lazy var identityImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "identity")
         let newImage = imageView.image?.withRenderingMode(.alwaysTemplate)
         imageView.image = newImage
         imageView.tintColor = UIColor.white
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        // default is NO!
+        imageView.isUserInteractionEnabled = true
+        // add a tap recogniser to the image view
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleImageSelection)))
         return imageView
     }()
     
@@ -104,6 +108,49 @@ class LoginViewController: UIViewController {
         setupLoginRegisterButton()
         setupIdentityImageView()
         setupLoginOrRegisterSegmentedControl()
+    }
+    
+    @objc func handleImageSelection(){
+        if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
+            return
+        }
+        
+        let alertController = UIAlertController(title: "Source Type", message: "Choose where the image is from", preferredStyle: .actionSheet)
+        //action in the actionSheet that handles the logic of choosing photos in the photo library...
+        alertController.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {(action: UIAlertAction!) -> Void in
+            let controller = UIImagePickerController()
+            
+            controller.sourceType = .photoLibrary
+            // not allow editing after selecting the file...
+            controller.allowsEditing = true
+            controller.delegate = self
+            //Presents a view controller modally.
+            self.present(controller, animated: true, completion: nil)
+        }))
+        // action in the actionSheet that handles the logic of taking a new photo...
+        alertController.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action: UIAlertAction!) -> Void in
+            // not available of camera
+            // the emulator does not support the support the camera...
+            if !UIImagePickerController.isSourceTypeAvailable(
+                UIImagePickerController.SourceType.camera) {
+                //show the alert controller that the camera is not available...
+                let cameraNotAvailableAlertController = UIAlertController(title: "The camera is not available", message: "It seems like this device has no camera", preferredStyle: .alert)
+                cameraNotAvailableAlertController.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+                self.present(cameraNotAvailableAlertController, animated: true, completion: nil)
+                
+            }
+                //available of camera
+            else {
+                let controller = UIImagePickerController()
+                controller.sourceType = .camera
+                controller.allowsEditing = false
+                controller.delegate = self
+                self.present(controller, animated: true, completion: nil)
+            }
+        }))
+        // cancel the action...
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
     
     @objc func handleLoginOrRegister(){
@@ -133,6 +180,8 @@ class LoginViewController: UIViewController {
     @objc func handleLoginRegisterSegmentedControlValueChanged(){
         let title = loginRegisterSegmentedControl.titleForSegment(at: loginRegisterSegmentedControl.selectedSegmentIndex)
         loginRegisterButton.setTitle(title, for: .normal)
+        
+        identityImageView.isHidden = (loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? true : false)
         
         // change height of the container
         inputsContainerHeightAnchor?.constant = loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 100 : 150
@@ -173,6 +222,8 @@ class LoginViewController: UIViewController {
             return
         }
         
+
+        
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             if error != nil {
                 let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
@@ -186,26 +237,59 @@ class LoginViewController: UIViewController {
                 return
             }
             
-            // succesfully registered
-            let ref = Database.database().reference(fromURL: "https://pmpsystem-f537e.firebaseio.com/")
-            let name = email.split(separator: "@").first
-            let values = ["emailAddress": email, "name": name!] as [String : Any]
-            // uid is the child of the users
-            let userRef = ref.child("users").child(userUID)
-            userRef.updateChildValues(values, withCompletionBlock: { (errInUpdate, ref) in
-                if errInUpdate != nil {
-                    let alert = UIAlertController(title: "Error", message: errInUpdate?.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Sure", style: .default, handler: nil))
-                    self.present(alert, animated: true)
-                    return
-                }
-                // successfully update database
-                self.dismiss(animated: true, completion: nil)
-                
-            })
+            // upload the user image.
+            let storageRef = Storage.storage().reference().child("AdminIdentityImages").child(NSUUID().uuidString)
+            
+            // Create file metadata to update
+            let newMetadata = StorageMetadata()
+            newMetadata.cacheControl = "public,max-age=300";
+            newMetadata.contentType = "image/jpeg";
+
+            if let uploadData = (self.identityImageView.image!).pngData(){
+                storageRef.putData(uploadData, metadata: newMetadata, completion: { (metadata, errorForUpload) in
+                    // if uploading has errors
+                    if errorForUpload != nil {
+                        print(errorForUpload)
+                        return
+                    }
+                    // if successfully upload, get the absolute url
+//                    if let identityImageURL = metadata?.downloadURL().absoluteString {
+//                        print(identityImageURL)
+//                    }
+                    storageRef.downloadURL(completion: { (url, error) in
+                        if error != nil {
+                            print(error)
+                            return
+                        }
+                        if let identityImageURL = url?.absoluteString{
+                            let values = ["emailAddress": self.emailTextField.text, "name": self.emailTextField.text?.split(separator: "@").first!, "identityImageURL": identityImageURL] as [String : Any]
+                            self.registerUserIntoDatabaseWithUID(uid: (authResult?.user.uid)!, values: values as [String : AnyObject])
+                        }
+                    })
+
+                })
+            }
+            
         }
     }
     
+    private func registerUserIntoDatabaseWithUID(uid: String, values: [String: AnyObject]){
+        let ref = Database.database().reference(fromURL: "https://pmpsystem-f537e.firebaseio.com/")
+
+        let userRef = ref.child("users").child(uid)
+        
+        userRef.updateChildValues(values, withCompletionBlock: { (errInUpdate, ref) in
+            if errInUpdate != nil {
+                let alert = UIAlertController(title: "Error", message: errInUpdate?.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Sure", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                return
+            }
+            // successfully update database
+            self.dismiss(animated: true, completion: nil)
+            
+        })
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
@@ -270,7 +354,6 @@ class LoginViewController: UIViewController {
         passwordHeightAnchor = passwordTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: 1/3)
         passwordHeightAnchor?.isActive = true
         
-        
         // 4 constraints of the seperator:
         passwordSeparatorView.leftAnchor.constraint(equalTo: inputsContainerView.leftAnchor).isActive = true
         passwordSeparatorView.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor).isActive = true
@@ -317,8 +400,33 @@ class LoginViewController: UIViewController {
         identityImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
         identityImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
         identityImageView.image?.renderingMode
+        // set container view corner radius
+        identityImageView.layer.cornerRadius = 8
+        // this line makes sure that the corner radius takes effect.
+        identityImageView.layer.masksToBounds = true
     }
     
+    //Tells the delegate that the user picked a still image.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            let width = pickedImage.size.width
+            let height = pickedImage.size.height
+            //wtf why not work
+            identityImageView.sizeThatFits(CGSize(width: width, height: height))
+            identityImageView.frame = CGRect(x: 0, y: 0, width: width, height: height)
+            identityImageView.image = pickedImage
+            // Dismisses the view controller that was presented modally by the view controller.
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    // Tells the delegate that the user cancelled the pick operation.
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        let alertController = UIAlertController(title: "There was an error in getting the photo", message: "Error", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
+    }
     
 }
 
