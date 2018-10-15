@@ -20,6 +20,10 @@
 		A7109A6D216A0A7800E3C029 /* PMPSystemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7109A6C216A0A7800E3C029 /* PMPSystemUITests.swift */; };
 		A7109A7B216A18B200E3C029 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7109A7A216A18B200E3C029 /* LoginViewController.swift */; };
 		A7109A7F216A5CD100E3C029 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7109A7E216A5CD100E3C029 /* GoogleService-Info.plist */; };
+		A7109A81217467B100E3C029 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7109A80217467B100E3C029 /* InfoViewController.swift */; };
+		A7109A8321746F4E00E3C029 /* ItemOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7109A8221746F4E00E3C029 /* ItemOneViewController.swift */; };
+		A7109A8521747F6000E3C029 /* InfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7109A8421747F6000E3C029 /* InfoTableViewController.swift */; };
+		A7109A87217482D100E3C029 /* MyUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7109A86217482D100E3C029 /* MyUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +66,10 @@
 		A7109A6E216A0A7800E3C029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7109A7A216A18B200E3C029 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A7109A7E216A5CD100E3C029 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A7109A80217467B100E3C029 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		A7109A8221746F4E00E3C029 /* ItemOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemOneViewController.swift; sourceTree = "<group>"; };
+		A7109A8421747F6000E3C029 /* InfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewController.swift; sourceTree = "<group>"; };
+		A7109A86217482D100E3C029 /* MyUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUser.swift; sourceTree = "<group>"; };
 		CE20F64F4AF65EE6C608AE4A /* Pods-PMPSystemUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMPSystemUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PMPSystemUITests/Pods-PMPSystemUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E68E5DB340C5F4EF55EC2AC5 /* Pods_PMPSystemUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PMPSystemUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF62DE49AE4EFEA96B0DF07A /* Pods_PMPSystemTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PMPSystemTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,7 +132,11 @@
 			children = (
 				A7109A49216A0A7200E3C029 /* AppDelegate.swift */,
 				A7109A4B216A0A7200E3C029 /* ViewController.swift */,
+				A7109A8221746F4E00E3C029 /* ItemOneViewController.swift */,
 				A7109A7A216A18B200E3C029 /* LoginViewController.swift */,
+				A7109A80217467B100E3C029 /* InfoViewController.swift */,
+				A7109A8421747F6000E3C029 /* InfoTableViewController.swift */,
+				A7109A86217482D100E3C029 /* MyUser.swift */,
 				A7109A4D216A0A7200E3C029 /* Main.storyboard */,
 				A7109A55216A0A7700E3C029 /* LaunchScreen.storyboard */,
 				A7109A58216A0A7700E3C029 /* Info.plist */,
@@ -407,10 +419,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7109A8521747F6000E3C029 /* InfoTableViewController.swift in Sources */,
+				A7109A8321746F4E00E3C029 /* ItemOneViewController.swift in Sources */,
 				A7109A7B216A18B200E3C029 /* LoginViewController.swift in Sources */,
 				A7109A4C216A0A7200E3C029 /* ViewController.swift in Sources */,
+				A7109A87217482D100E3C029 /* MyUser.swift in Sources */,
 				A7109A4A216A0A7200E3C029 /* AppDelegate.swift in Sources */,
 				A7109A52216A0A7200E3C029 /* PMPSystem.xcdatamodeld in Sources */,
+				A7109A81217467B100E3C029 /* InfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
