@@ -105,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asY-Zs-6FB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3386" y="-732"/>
+            <point key="canvasLocation" x="3134" y="-732"/>
         </scene>
         <!--Profile-->
         <scene sceneID="emk-NV-Vva">
@@ -306,7 +306,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DfB-4b-icT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5260" y="-1096.5517241379312"/>
+            <point key="canvasLocation" x="4089" y="-755"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="h7Z-1D-I0N">
@@ -334,7 +334,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81n-b2-tc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5214" y="211"/>
+            <point key="canvasLocation" x="4089" y="92"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="9QY-Vb-hZW">
@@ -458,10 +458,10 @@
             </objects>
             <point key="canvasLocation" x="6425" y="233"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Admin Info Table View Controller-->
         <scene sceneID="UYl-Tr-PHw">
             <objects>
-                <tableViewController id="YYK-4V-fX9" sceneMemberID="viewController">
+                <tableViewController id="YYK-4V-fX9" customClass="AdminInfoTableViewController" customModule="PMPSystem" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yY1-Uu-7Hk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="669"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -568,7 +568,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cky-du-1oL">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cky-du-1oL">
                                                     <rect key="frame" x="16" y="0.0" width="343" height="49.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -592,10 +592,17 @@
                         </connections>
                     </tableView>
                     <size key="freeformSize" width="375" height="669"/>
+                    <connections>
+                        <outlet property="firstNameTextField" destination="rmy-O4-Z4k" id="gsh-50-fu6"/>
+                        <outlet property="lastNameTextField" destination="VWM-rV-G7R" id="PS5-v3-8rT"/>
+                        <outlet property="stateTextField" destination="cky-du-1oL" id="x2V-9d-MM9"/>
+                        <outlet property="streetTextField" destination="u8i-JJ-mvu" id="fF6-Pq-QPS"/>
+                        <outlet property="suburbTextField" destination="cA1-Fq-klO" id="FsR-Zj-pMU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AH1-Km-AMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6424.8000000000002" y="-1095.2023988005999"/>
+            <point key="canvasLocation" x="5015" y="-731"/>
         </scene>
         <!--Item-->
         <scene sceneID="WBY-wU-dWx">
