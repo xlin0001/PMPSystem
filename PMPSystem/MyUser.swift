@@ -14,4 +14,16 @@ class MyUser: NSObject {
     var emailAddress: String?
     var identityImage: UIImage?
     var name: String?
+    
+    // Singleton Pattern Constructor
+    static let onlyUser = MyUser()
+    
+    init(uid: String, emailAddress: String, identityImage: UIImage, name: String) {
+        self.uid = uid
+        self.emailAddress = emailAddress
+        self.identityImage  = identityImage
+        self.name = name
+    }
+    
+    override init(){}
 }
