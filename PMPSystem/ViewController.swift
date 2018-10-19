@@ -16,6 +16,9 @@ class ViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         refHandle = Database.database().reference(fromURL: "https://pmpsystem-f537e.firebaseio.com/")
         myUser = MyUser.onlyUser
         handleUser(myUser!)

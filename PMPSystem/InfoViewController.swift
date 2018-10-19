@@ -19,6 +19,7 @@ class InfoViewController: UIViewController {
         }
         
         let loginController = LoginViewController()
+        
         self.present(loginController, animated: true)
     }
     
