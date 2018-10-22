@@ -12,17 +12,10 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PMPSystem" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PMPSystem" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2553" y="1980"/>
+            <point key="canvasLocation" x="-2177" y="1896"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="63U-TM-qKC">
@@ -308,10 +301,10 @@
             </objects>
             <point key="canvasLocation" x="4089" y="-755"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Add New Projector Table View Controller-->
         <scene sceneID="9QY-Vb-hZW">
             <objects>
-                <tableViewController id="lM4-p3-Rtx" sceneMemberID="viewController">
+                <tableViewController id="lM4-p3-Rtx" customClass="AddNewProjectorTableViewController" customModule="PMPSystem" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LtT-FM-c5u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -507,10 +500,20 @@
                             <outlet property="delegate" destination="lM4-p3-Rtx" id="5Cl-FN-VtM"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="dateTextField" destination="IGm-TW-t9D" id="Usl-IJ-yda"/>
+                        <outlet property="lightSourceTextField" destination="l9P-iv-xNS" id="m9l-dZ-wWQ"/>
+                        <outlet property="locationTextField" destination="j67-FZ-eyi" id="arj-b0-fDr"/>
+                        <outlet property="operatingTempTextField" destination="XdT-OT-MJl" id="MdC-5l-WOk"/>
+                        <outlet property="powerConsumTextField" destination="3kb-IN-brS" id="UpZ-1Y-aBL"/>
+                        <outlet property="projectorImageView" destination="qT5-4b-5G1" id="pz9-qO-zeo"/>
+                        <outlet property="projectorNameTextField" destination="5G8-aK-P2T" id="cHQ-e5-MWz"/>
+                        <outlet property="projectorTypeTextField" destination="xfs-RI-IK5" id="r8q-Cn-f6k"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rpf-yh-KjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4382" y="-81"/>
+            <point key="canvasLocation" x="4089" y="22"/>
         </scene>
         <!--Admin Info Table View Controller-->
         <scene sceneID="UYl-Tr-PHw">
