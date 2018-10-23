@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
 class AddNewProjectorTableViewController: UITableViewController,UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    private let MIN_TEMP_COMPONENT = 0
+    private let MAX_TEMP_COMPONENT = 1
+    
+    private var minTemp = -20
+    private var maxTemp = -20
+    
     private let projectTypeList: Array = {
         return ["Portable", "Fixed Mounted"]
     }()
@@ -22,19 +29,66 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
         return ["UHP", "LED", "Xenon", "Laser", "LED Laser Hybrid"]
     }()
     
+    private let projectorMaxLuxList: Array = { () -> [Int] in
+        var lux = 0
+        var maxLuxCandidates = Array<Int>()
+        repeat {
+            lux = lux + 100
+            maxLuxCandidates.append(lux)
+        } while lux < 50000
+       return maxLuxCandidates
+    }()
+    
+    private let projectorPowerList: Array = { () -> [Int] in
+        var power = 0
+        var powerCandidates = Array<Int>()
+        repeat {
+            power = power + 100
+            powerCandidates.append(power)
+        } while power < 10000
+        return powerCandidates
+    }()
+    
+    private let minOpTemp: Array = { () -> [Int] in
+        var temp = -20
+        var tempCandidates = Array<Int>()
+        repeat {
+            temp = temp + 1
+            tempCandidates.append(temp)
+        } while temp <= 100
+        return tempCandidates
+    }()
+    
+    private var maxOpTemp: Array = { () -> [Int] in
+        var temp = -20
+        var tempCandidates = Array<Int>()
+        repeat {
+            temp = temp + 1
+            tempCandidates.append(temp)
+        } while temp <= 100
+        return tempCandidates
+    }()
+    
+    
     @IBOutlet weak var projectorImageView: UIImageView!
     @IBOutlet weak var projectorNameTextField: UITextField!
     
+    @IBOutlet weak var maximumLuxTextField: UITextField!
     @IBOutlet weak var powerConsumTextField: UITextField!
     @IBOutlet weak var operatingTempTextField: UITextField!
     @IBOutlet weak var lightSourceTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var projectorTypeTextField: UITextField!
+    @IBOutlet weak var projectorAliasTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.projectorTypeTextField.delegate = self
+        self.lightSourceTextField.delegate = self
         handlePicker()
+        navigationItem.title = "Add A New Projector"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneSave))
     }
 
     private var projectorTypePickerView: UIPickerView = {
@@ -63,7 +117,28 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
     
     private var projectorLightSourcePickerView: UIPickerView = {
         var picker = UIPickerView()
-        picker.accessibilityIdentifier == "projectorLightSourcePickerView"
+        picker.accessibilityIdentifier = "projectorLightSourcePickerView"
+        picker.backgroundColor = .white
+        return picker
+    }()
+    
+    private var projectorMaxLuxPickerView: UIPickerView = {
+        var picker = UIPickerView()
+        picker.accessibilityIdentifier = "projectorMaxLuxPickerView"
+        picker.backgroundColor = .white
+        return picker
+    }()
+    
+    private var projectorPowerPickerView: UIPickerView = {
+        var picker = UIPickerView()
+        picker.accessibilityIdentifier = "projectorPowerPickerView"
+        picker.backgroundColor = .white
+        return picker
+    }()
+    
+    private var projectorTempPickerView: UIPickerView = {
+        var picker = UIPickerView()
+        picker.accessibilityIdentifier = "projectorTempPickerView"
         picker.backgroundColor = .white
         return picker
     }()
@@ -90,6 +165,42 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
         
         dateTextField.inputView = projectInstallationDatePickerView
         dateTextField.inputAccessoryView = pickerAccessoryBar
+        
+        projectorLightSourcePickerView.dataSource = self
+        projectorLightSourcePickerView.delegate = self
+        lightSourceTextField.inputView = projectorLightSourcePickerView
+        lightSourceTextField.inputAccessoryView = pickerAccessoryBar
+        
+        projectorMaxLuxPickerView.dataSource = self
+        projectorMaxLuxPickerView.delegate = self
+        maximumLuxTextField.inputView = projectorMaxLuxPickerView
+        maximumLuxTextField.inputAccessoryView = pickerAccessoryBar
+        
+        projectorPowerPickerView.dataSource = self
+        projectorPowerPickerView.delegate = self
+        powerConsumTextField.inputView = projectorPowerPickerView
+        powerConsumTextField.inputAccessoryView = pickerAccessoryBar
+        
+        projectorTempPickerView.dataSource = self
+        projectorTempPickerView.delegate = self
+        operatingTempTextField.inputView = projectorTempPickerView
+        operatingTempTextField.inputAccessoryView = pickerAccessoryBar
+    }
+    
+    func handleMaxTemp(minTemp: Int){
+        // reset the candidates in maxTemp conponent (the second component)
+        maxOpTemp.removeAll()
+        var temp = -20
+        repeat {
+            temp = temp + 1
+            maxOpTemp.append(temp)
+        } while temp <= 100
+        //make sure all max values are larger than the min values
+        for maxTempCandidate in maxOpTemp {
+            if maxTempCandidate <= minTemp {
+                maxOpTemp.removeFirst()
+            }
+        }
     }
     
     @objc func dissmissKeyBoard(){
@@ -104,7 +215,44 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
         dateFormatter.timeStyle = .none
         dateFormatter.locale = Locale(identifier: "en_UK")
         dateTextField.text = dateFormatter.string(from: selectedDate)
+    }
+    
+    @objc func doneSave(){
+//        handleUpdateAdminInfo(values as [String : AnyObject])
         
+        // get all the text fields ready
+        let brand = projectorNameTextField.text
+        let type = projectorTypeTextField.text
+        let date = dateTextField.text
+        let location = locationTextField.text
+        let lampType = lightSourceTextField.text
+        let maxLux = maximumLuxTextField.text
+        let alias = projectorAliasTextField.text
+        
+        // get the temps ready
+        let tempText = operatingTempTextField.text
+        let temps = tempText?.split(separator: "-")
+        let minTempInTF = String((temps?[0])!).trimmingCharacters(in: .whitespacesAndNewlines)
+        let maxTempInTF = String((temps?[1])!).trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        let power = powerConsumTextField.text
+        
+        let values = ["alias": alias, "brand": brand, "type": type, "date": date, "location": location, "lampType": lampType, "maxLux": maxLux, "minTemp": minTempInTF, "maxTemp": maxTempInTF, "power": power]
+        handleNewProjector(values as [String : AnyObject])
+        
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func handleNewProjector(_ values: [String : AnyObject]){
+//        currentUserRef.updateChildValues(values)
+        let refHandle = Database.database().reference(fromURL: "https://pmpsystem-f537e.firebaseio.com/")
+        guard let userUID = Auth.auth().currentUser?.uid else {
+            print("add new projector error occurs")
+            return
+        }
+        let projectorRefHandle = refHandle.child("users").child(userUID).child("projectors").childByAutoId()
+        print(projectorRefHandle.key)
+        projectorRefHandle.updateChildValues(values)
         
     }
 
@@ -113,6 +261,14 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
             return 1
         } else if pickerView.accessibilityIdentifier == "projectorBrandPickerView"{
             return 1
+        } else if pickerView.accessibilityIdentifier == "projectorLightSourcePickerView"{
+            return 1
+        } else if pickerView.accessibilityIdentifier == "projectorMaxLuxPickerView"{
+            return 1
+        } else if pickerView.accessibilityIdentifier == "projectorPowerPickerView" {
+            return 1
+        } else if pickerView.accessibilityIdentifier == "projectorTempPickerView" {
+            return 2
         }
         else {
             return 1
@@ -124,6 +280,18 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
             return projectTypeList.count
         } else if pickerView.accessibilityIdentifier == "projectorBrandPickerView" {
             return projectorBrandList.count
+        } else if pickerView.accessibilityIdentifier == "projectorLightSourcePickerView" {
+            return projectorLightSourceList.count
+        } else if pickerView.accessibilityIdentifier == "projectorMaxLuxPickerView" {
+            return projectorMaxLuxList.count
+        } else if pickerView.accessibilityIdentifier == "projectorPowerPickerView" {
+            return projectorPowerList.count
+        } else if pickerView.accessibilityIdentifier == "projectorTempPickerView" {
+            if component == MIN_TEMP_COMPONENT {
+                return minOpTemp.count
+            } else {
+                return maxOpTemp.count
+            }
         }
         return 1
     }
@@ -133,17 +301,53 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
             return projectTypeList[row]
         } else if pickerView.accessibilityIdentifier == "projectorBrandPickerView"{
             return projectorBrandList[row]
+        } else if pickerView.accessibilityIdentifier == "projectorLightSourcePickerView"{
+            return projectorLightSourceList[row]
+        } else if pickerView.accessibilityIdentifier == "projectorMaxLuxPickerView" {
+            return String(projectorMaxLuxList[row])
+        } else if pickerView.accessibilityIdentifier == "projectorPowerPickerView" {
+            return "\(String(projectorPowerList[row])) Watts"
+        } else if pickerView.accessibilityIdentifier == "projectorTempPickerView" {
+            if component == MIN_TEMP_COMPONENT {
+                return "\(String(minOpTemp[row])) \(NSString(format:"%@", "\u{00B0}") as String)"
+            } else {
+                return "\(String(maxOpTemp[row])) \(NSString(format:"%@", "\u{00B0}") as String)"
+            }
         }
         return "N/A"
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
         if pickerView.accessibilityIdentifier == "projectorTypePickerView" {
             projectorTypeTextField.text = projectTypeList[row]
         } else if pickerView.accessibilityIdentifier == "projectorBrandPickerView" {
             projectorNameTextField.text = projectorBrandList[row]
+        } else if pickerView.accessibilityIdentifier == "projectorLightSourcePickerView" {
+            lightSourceTextField.text = projectorLightSourceList[row]
+        } else if pickerView.accessibilityIdentifier == "projectorMaxLuxPickerView"{
+            maximumLuxTextField.text = String(projectorMaxLuxList[row])
+        } else if pickerView.accessibilityIdentifier == "projectorPowerPickerView" {
+            powerConsumTextField.text = "\(String(projectorPowerList[row])) Watts"
+        } else if pickerView.accessibilityIdentifier == "projectorTempPickerView" {
+            if component == MIN_TEMP_COMPONENT {
+                let selectMinTemp = minOpTemp[row]
+                handleMaxTemp(minTemp: selectMinTemp)
+                pickerView.reloadComponent(MAX_TEMP_COMPONENT)
+                pickerView.selectRow(0, inComponent: MAX_TEMP_COMPONENT, animated: true)
+            }
+            if component == MIN_TEMP_COMPONENT {
+                minTemp = minOpTemp[row]
+            } else if component == MAX_TEMP_COMPONENT {
+                maxTemp = maxOpTemp[row]
+            }
+            if minTemp != -20 && maxTemp != -20{
+                operatingTempTextField.text = "\(minTemp) - \(maxTemp)"
+            }
+
         }
     }
+    
     
     
     // Override to support conditional rearranging of the table view.

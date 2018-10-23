@@ -364,12 +364,29 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9pO-bp-o4Z">
+                                        <rect key="frame" x="0.0" y="271" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9pO-bp-o4Z" id="mFU-US-BWD">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Project Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bKY-vk-ijP">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Installation information" id="rLZ-g5-MWc">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="gdz-X7-P9p">
-                                        <rect key="frame" x="0.0" y="299" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="343" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gdz-X7-P9p" id="ciI-FF-Wh5">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -386,7 +403,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bUh-d4-nSv">
-                                        <rect key="frame" x="0.0" y="343" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="387" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bUh-d4-nSv" id="s3L-jj-Aa9">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -407,7 +424,7 @@
                             <tableViewSection headerTitle="Lamp Condition" id="FFE-DV-58t">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="rzp-9S-rfM">
-                                        <rect key="frame" x="0.0" y="415" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="459" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rzp-9S-rfM" id="IlL-wc-k8f">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -424,7 +441,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ND7-Pc-2iY">
-                                        <rect key="frame" x="0.0" y="459" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="503" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ND7-Pc-2iY" id="TLW-0A-39a">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -445,7 +462,7 @@
                             <tableViewSection headerTitle="Operating Condition" id="uBX-NS-rtt">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="UHA-sd-8Sb">
-                                        <rect key="frame" x="0.0" y="531" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="575" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UHA-sd-8Sb" id="gTf-Ah-OSJ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -469,7 +486,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WP8-81-47F">
-                                        <rect key="frame" x="0.0" y="575" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="619" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WP8-81-47F" id="7Wq-Jm-GAe">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -504,10 +521,12 @@
                         <outlet property="dateTextField" destination="IGm-TW-t9D" id="Usl-IJ-yda"/>
                         <outlet property="lightSourceTextField" destination="l9P-iv-xNS" id="m9l-dZ-wWQ"/>
                         <outlet property="locationTextField" destination="j67-FZ-eyi" id="arj-b0-fDr"/>
+                        <outlet property="maximumLuxTextField" destination="DdV-2F-Vqv" id="bYo-bZ-Gwu"/>
                         <outlet property="operatingTempTextField" destination="XdT-OT-MJl" id="MdC-5l-WOk"/>
                         <outlet property="powerConsumTextField" destination="3kb-IN-brS" id="UpZ-1Y-aBL"/>
+                        <outlet property="projectorAliasTextField" destination="bKY-vk-ijP" id="WwJ-PJ-lOc"/>
                         <outlet property="projectorImageView" destination="qT5-4b-5G1" id="pz9-qO-zeo"/>
-                        <outlet property="projectorNameTextField" destination="5G8-aK-P2T" id="cHQ-e5-MWz"/>
+                        <outlet property="projectorNameTextField" destination="5G8-aK-P2T" id="wt0-Kf-Zgn"/>
                         <outlet property="projectorTypeTextField" destination="xfs-RI-IK5" id="r8q-Cn-f6k"/>
                     </connections>
                 </tableViewController>
@@ -918,10 +937,10 @@
         <image name="elemental-tip" width="32" height="32"/>
         <image name="man-user" width="32" height="32"/>
         <image name="more-details-circular-button" width="32" height="32"/>
-        <image name="projector" width="128" height="128"/>
+        <image name="projector" width="46.311557769775391" height="46.311557769775391"/>
         <image name="projector-with-big-len" width="32" height="32"/>
         <image name="projector-with-big-len-2" width="32" height="32"/>
-        <image name="user-3" width="128" height="128"/>
+        <image name="user-3" width="42.470046997070312" height="42.470046997070312"/>
         <image name="warning" width="32" height="32"/>
         <image name="writing-2" width="32" height="32"/>
     </resources>
