@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class AddNewProjectorTableViewController: UITableViewController,UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddNewProjectorTableViewController: UITableViewController,UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     private let MIN_TEMP_COMPONENT = 0
     private let MAX_TEMP_COMPONENT = 1
@@ -218,24 +218,25 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
     }
     
     @objc func doneSave(){
-//        handleUpdateAdminInfo(values as [String : AnyObject])
+        guard let brand = projectorNameTextField.text, let type = projectorTypeTextField.text, let date = dateTextField.text, let location = locationTextField.text, let lampType = lightSourceTextField.text, let maxLux = maximumLuxTextField.text, let alias = projectorAliasTextField.text, let tempText = operatingTempTextField.text, let power = powerConsumTextField.text else {
+            print("Add projector no enough info")
+            return
+        }
         
-        // get all the text fields ready
-        let brand = projectorNameTextField.text
-        let type = projectorTypeTextField.text
-        let date = dateTextField.text
-        let location = locationTextField.text
-        let lampType = lightSourceTextField.text
-        let maxLux = maximumLuxTextField.text
-        let alias = projectorAliasTextField.text
+        if brand == "" || type == "" || date == "" || location == "" || lampType == "" || maxLux == "" || alias == "" || tempText == "" || power == "" {
+            // if some fields are empty, then give user a alert controller
+            let alert = UIAlertController(title: "Error", message: "Some fields are not in proper format", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Sure", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return
+        }
         
         // get the temps ready
-        let tempText = operatingTempTextField.text
-        let temps = tempText?.split(separator: "-")
-        let minTempInTF = String((temps?[0])!).trimmingCharacters(in: .whitespacesAndNewlines)
-        let maxTempInTF = String((temps?[1])!).trimmingCharacters(in: .whitespacesAndNewlines)
+        //let tempText = operatingTempTextField.text
+        let temps = tempText.split(separator: "-")
+        let minTempInTF = String((temps[0])).trimmingCharacters(in: .whitespacesAndNewlines)
+        let maxTempInTF = String((temps[1])).trimmingCharacters(in: .whitespacesAndNewlines)
         
-        let power = powerConsumTextField.text
         
         let values = ["alias": alias, "brand": brand, "type": type, "date": date, "location": location, "lampType": lampType, "maxLux": maxLux, "minTemp": minTempInTF, "maxTemp": maxTempInTF, "power": power]
         handleNewProjector(values as [String : AnyObject])
@@ -348,6 +349,13 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // if the user select to choose the picture...
+        if indexPath == [0, 0] {
+            handleImageSelection()
+        }
+    }
+    
     
     
     // Override to support conditional rearranging of the table view.
@@ -356,6 +364,65 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
         return true
     }
     
+    func handleImageSelection(){
+        let alertController = UIAlertController(title: "Source Type", message: "Choose where the image is from", preferredStyle: .actionSheet)
+        //action in the actionSheet that handles the logic of choosing photos in the photo library...
+        alertController.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {(action: UIAlertAction!) -> Void in
+            let controller = UIImagePickerController()
+            
+            controller.sourceType = .photoLibrary
+            // not allow editing after selecting the file...
+            controller.allowsEditing = true
+            controller.delegate = self
+            //Presents a view controller modally.
+            self.present(controller, animated: true, completion: nil)
+        }))
+        // action in the actionSheet that handles the logic of taking a new photo...
+        alertController.addAction(UIAlertAction(title: "Camera", style: .default, handler: {(action: UIAlertAction!) -> Void in
+            // not available of camera
+            // the emulator does not support the support the camera...
+            if !UIImagePickerController.isSourceTypeAvailable(
+                UIImagePickerController.SourceType.camera) {
+                //show the alert controller that the camera is not available...
+                let cameraNotAvailableAlertController = UIAlertController(title: "The camera is not available", message: "It seems like this device has no camera", preferredStyle: .alert)
+                cameraNotAvailableAlertController.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+                self.present(cameraNotAvailableAlertController, animated: true, completion: nil)
+                
+            }
+                //available of camera
+            else {
+                let controller = UIImagePickerController()
+                controller.sourceType = .camera
+                controller.allowsEditing = false
+                controller.delegate = self
+                self.present(controller, animated: true, completion: nil)
+            }
+        }))
+        // cancel the action...
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
     
+    //Tells the delegate that the user picked a still image.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            let width = pickedImage.size.width
+            let height = pickedImage.size.height
+            //wtf why not work
+            projectorImageView.sizeThatFits(CGSize(width: width, height: height))
+            projectorImageView.frame = CGRect(x: 0, y: 0, width: width, height: height)
+            projectorImageView.image = Util.resizeImage(image: pickedImage, targetSize: CGSize(width: 100, height: 100))
+            // Dismisses the view controller that was presented modally by the view controller.
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    // Tells the delegate that the user cancelled the pick operation.
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        let alertController = UIAlertController(title: "There was an error in getting the photo", message: "Error", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
+    }
     
 }

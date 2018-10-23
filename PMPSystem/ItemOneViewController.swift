@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ItemOneViewController: UIViewController {
+class ItemOneViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
