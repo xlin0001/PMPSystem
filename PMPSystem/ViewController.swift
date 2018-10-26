@@ -13,6 +13,7 @@ class ViewController: UITabBarController {
     var logginViewController: LoginViewController?
     var myUser: MyUser?
     var refHandle: DatabaseReference?
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,14 @@ class ViewController: UITabBarController {
     }
     
     func handleUser(_ user: MyUser){
+        
+        self.activityIndicator.center = self.view.center
+        self.activityIndicator.hidesWhenStopped = true
+        self.activityIndicator.style = UIActivityIndicatorView.Style.gray
+        self.view.addSubview(self.activityIndicator)
+        self.activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
         if Auth.auth().currentUser?.uid != nil{
             myUser?.uid = Auth.auth().currentUser?.uid
 
@@ -48,7 +57,8 @@ class ViewController: UITabBarController {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // in half a second...
                         self.myUser?.identityImage = UIImage(data: data!)
                         let infoController = InfoViewController()
-                        //info
+                        self.activityIndicator.stopAnimating()
+                        UIApplication.shared.endIgnoringInteractionEvents()
                     }
                 }).resume()
             })

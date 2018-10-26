@@ -52,7 +52,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/LoginViewController.swift"
-            timestampString = "561985621.873152"
+            timestampString = "562137821.598393"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "269"
@@ -68,7 +68,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/LoginViewController.swift"
-            timestampString = "561985621.87322"
+            timestampString = "562137821.598453"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "252"
@@ -84,7 +84,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/LoginViewController.swift"
-            timestampString = "561985621.873262"
+            timestampString = "562137821.598493"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "248"
@@ -100,7 +100,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/LoginViewController.swift"
-            timestampString = "561985621.873298"
+            timestampString = "562137821.598527"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "251"
@@ -116,7 +116,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/LoginViewController.swift"
-            timestampString = "561985621.873335"
+            timestampString = "562137821.598562"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "261"
@@ -132,7 +132,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/InfoViewController.swift"
-            timestampString = "561985621.873373"
+            timestampString = "562050130.525999"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
@@ -148,7 +148,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/LoginViewController.swift"
-            timestampString = "561985621.873407"
+            timestampString = "562137821.598629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
@@ -241,7 +241,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/LoginViewController.swift"
-            timestampString = "561985621.873445"
+            timestampString = "562137821.598665"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
@@ -319,7 +319,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/LoginViewController.swift"
-            timestampString = "561985621.873481"
+            timestampString = "562137821.598698"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "15"
@@ -397,7 +397,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/InfoViewController.swift"
-            timestampString = "561985621.873518"
+            timestampString = "562050130.526198"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -413,7 +413,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/ItemOneViewController.swift"
-            timestampString = "561985621.873552"
+            timestampString = "562144551.859868"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
@@ -429,7 +429,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/ViewController.swift"
-            timestampString = "561964268.7029099"
+            timestampString = "562144551.8599499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "13"
@@ -507,11 +507,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/ViewController.swift"
-            timestampString = "561964268.70296"
+            timestampString = "562144551.860018"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "handleUser(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -523,11 +523,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/ViewController.swift"
-            timestampString = "561964268.703017"
+            timestampString = "562144551.860072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "handleUser(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -539,11 +539,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/ViewController.swift"
-            timestampString = "561964268.703059"
+            timestampString = "562144551.860124"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "handleUser(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -555,11 +555,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/ViewController.swift"
-            timestampString = "561964268.7031"
+            timestampString = "562144551.860177"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "handleUser(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -571,11 +571,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/ViewController.swift"
-            timestampString = "561964268.703141"
+            timestampString = "562144551.860229"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "handleUser(_:)"
             landmarkType = "7">
             <Locations>
@@ -619,11 +619,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/ViewController.swift"
-            timestampString = "561964268.703182"
+            timestampString = "562144551.86028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "handleUser(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -635,11 +635,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/ViewController.swift"
-            timestampString = "561964268.703223"
+            timestampString = "562144551.86033"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "handleUser(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -651,7 +651,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/AdminInfoTableViewController.swift"
-            timestampString = "561985621.873722"
+            timestampString = "562050130.526534"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -667,7 +667,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/AdminInfoTableViewController.swift"
-            timestampString = "561985621.873762"
+            timestampString = "562050130.526605"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
@@ -683,7 +683,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/InfoTableViewController.swift"
-            timestampString = "561983337.397337"
+            timestampString = "562138492.6455671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -699,7 +699,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/InfoTableViewController.swift"
-            timestampString = "561983337.3973809"
+            timestampString = "562138492.645643"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -715,7 +715,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/InfoTableViewController.swift"
-            timestampString = "561983337.397415"
+            timestampString = "562138492.6457"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
@@ -731,11 +731,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/AddNewProjectorTableViewController.swift"
-            timestampString = "561985621.873848"
+            timestampString = "562144551.8605601"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
             landmarkName = "numberOfComponents(in:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -747,7 +747,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/AddNewProjectorTableViewController.swift"
-            timestampString = "561985621.875375"
+            timestampString = "562144551.861143"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "207"
@@ -763,7 +763,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/AddNewProjectorTableViewController.swift"
-            timestampString = "561985621.876516"
+            timestampString = "562144551.861563"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
@@ -779,11 +779,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/AddNewProjectorTableViewController.swift"
-            timestampString = "561985621.8775719"
+            timestampString = "562144551.861979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "280"
-            endingLineNumber = "280"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
             landmarkName = "pickerView(_:numberOfRowsInComponent:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -795,11 +795,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/AddNewProjectorTableViewController.swift"
-            timestampString = "561985621.878605"
+            timestampString = "562144551.862383"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
             landmarkName = "pickerView(_:titleForRow:forComponent:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -811,11 +811,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/AddNewProjectorTableViewController.swift"
-            timestampString = "561985621.879702"
+            timestampString = "562144551.862798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302"
+            startingLineNumber = "336"
+            endingLineNumber = "336"
             landmarkName = "pickerView(_:titleForRow:forComponent:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -827,11 +827,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/AddNewProjectorTableViewController.swift"
-            timestampString = "561985621.880425"
+            timestampString = "562144551.8631819"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "300"
-            endingLineNumber = "300"
+            startingLineNumber = "334"
+            endingLineNumber = "334"
             landmarkName = "pickerView(_:titleForRow:forComponent:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -839,15 +839,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/AddNewProjectorTableViewController.swift"
-            timestampString = "561985621.881126"
+            timestampString = "562144551.8635679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "doneSave()"
             landmarkType = "7">
          </BreakpointContent>
@@ -859,7 +859,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/AddNewProjectorTableViewController.swift"
-            timestampString = "561985621.881658"
+            timestampString = "562144551.863981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -952,7 +952,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/ItemOneViewController.swift"
-            timestampString = "561985621.882236"
+            timestampString = "562144551.864395"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "12"
@@ -1105,11 +1105,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/AddNewProjectorTableViewController.swift"
-            timestampString = "561985621.882292"
+            timestampString = "562144551.864447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "352"
-            endingLineNumber = "352"
+            startingLineNumber = "386"
+            endingLineNumber = "386"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1121,7 +1121,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/AddNewProjectorTableViewController.swift"
-            timestampString = "561985621.882941"
+            timestampString = "562144551.864834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "221"
@@ -1137,13 +1137,393 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/AddNewProjectorTableViewController.swift"
-            timestampString = "561985621.883432"
+            timestampString = "562144551.865213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "226"
             endingLineNumber = "226"
             landmarkName = "doneSave()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PMPSystem/AddNewProjectorTableViewController.swift"
+            timestampString = "562144551.8655879"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
+            landmarkName = "pickerView(_:numberOfRowsInComponent:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PMPSystem/ProjectorManagementTableViewController.swift"
+            timestampString = "562144551.86599"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PMPSystem/ProjectorManagementTableViewController.swift"
+            timestampString = "562144551.866431"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "numberOfSections(in:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PMPSystem/ProjectorManagementTableViewController.swift"
+            timestampString = "562144551.866801"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PMPSystem/ProjectorManagementTableViewController.swift"
+            timestampString = "562144551.86716"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PMPSystem/ProjectorManagementTableViewController.swift"
+            timestampString = "562144551.867516"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "ProjectorManagementTableViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PMPSystem/ProjectorManagementTableViewController.swift"
+            timestampString = "562144551.8678319"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PMPSystem/ProjectorManagementCollectionViewCell.swift"
+            timestampString = "562144551.868135"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "ProjectorManagementCollectionViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PMPSystem.ProjectorManagementCollectionViewCell.projectorImage.getter : weak Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "PMPSystem"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/iOSDevelopment/PMPSystem/PMPSystem/ProjectorManagementCollectionViewCell.swift"
+                  timestampString = "562061027.637"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PMPSystem.ProjectorManagementCollectionViewCell.projectorImage.setter : weak Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "PMPSystem"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/iOSDevelopment/PMPSystem/PMPSystem/ProjectorManagementCollectionViewCell.swift"
+                  timestampString = "562061027.640003"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PMPSystem.ProjectorManagementCollectionViewCell.init(frame: __C.CGRect) -&gt; PMPSystem.ProjectorManagementCollectionViewCell"
+                  moduleName = "PMPSystem"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/iOSDevelopment/PMPSystem/PMPSystem/ProjectorManagementCollectionViewCell.swift"
+                  timestampString = "562061027.642283"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "45">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PMPSystem.ProjectorManagementCollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;PMPSystem.ProjectorManagementCollectionViewCell&gt;"
+                  moduleName = "PMPSystem"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/iOSDevelopment/PMPSystem/PMPSystem/ProjectorManagementCollectionViewCell.swift"
+                  timestampString = "562061027.6445121"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "50">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PMPSystem/ProjectorsTableViewCell.swift"
+            timestampString = "562144551.868199"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "ProjectorsTableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PMPSystem.ProjectorsTableViewCell.collectionView.getter : weak Swift.Optional&lt;__C.UICollectionView&gt;"
+                  moduleName = "PMPSystem"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/iOSDevelopment/PMPSystem/PMPSystem/ProjectorsTableViewCell.swift"
+                  timestampString = "562060554.567504"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PMPSystem.ProjectorsTableViewCell.collectionView.setter : weak Swift.Optional&lt;__C.UICollectionView&gt;"
+                  moduleName = "PMPSystem"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/iOSDevelopment/PMPSystem/PMPSystem/ProjectorsTableViewCell.swift"
+                  timestampString = "562060554.5697351"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "106">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PMPSystem.ProjectorsTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; PMPSystem.ProjectorsTableViewCell"
+                  moduleName = "PMPSystem"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/iOSDevelopment/PMPSystem/PMPSystem/ProjectorsTableViewCell.swift"
+                  timestampString = "562060554.571683"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PMPSystem.ProjectorsTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;PMPSystem.ProjectorsTableViewCell&gt;"
+                  moduleName = "PMPSystem"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/iOSDevelopment/PMPSystem/PMPSystem/ProjectorsTableViewCell.swift"
+                  timestampString = "562060554.573989"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "50">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PMPSystem/ProjectorsTableViewCell.swift"
+            timestampString = "562144551.868258"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "awakeFromNib()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PMPSystem/ViewController.swift"
+            timestampString = "562144551.8683161"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "handleUser(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PMPSystem.ViewController.handleUser(PMPSystem.MyUser) -&gt; ()"
+                  moduleName = "PMPSystem"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/iOSDevelopment/PMPSystem/PMPSystem/ViewController.swift"
+                  timestampString = "562139745.801362"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "874">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PMPSystem.ViewController.handleUser(PMPSystem.MyUser) -&gt; ()"
+                  moduleName = "PMPSystem"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/iOSDevelopment/PMPSystem/PMPSystem/ViewController.swift"
+                  timestampString = "562139745.803425"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "1941">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PMPSystem/ProjectorManagementTableViewController.swift"
+            timestampString = "562144551.868369"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "handleProjectors()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PMPSystem.ProjectorManagementTableViewController.handleProjectors() -&gt; ()"
+                  moduleName = "PMPSystem"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/iOSDevelopment/PMPSystem/PMPSystem/ProjectorManagementTableViewController.swift"
+                  timestampString = "562144547.028271"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "25">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PMPSystem.ProjectorManagementTableViewController.handleProjectors() -&gt; ()"
+                  moduleName = "PMPSystem"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliver/iOSDevelopment/PMPSystem/PMPSystem/ProjectorManagementTableViewController.swift"
+                  timestampString = "562144547.0307209"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "972">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

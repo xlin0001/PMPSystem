@@ -239,10 +239,44 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
         
         
         let values = ["alias": alias, "brand": brand, "type": type, "date": date, "location": location, "lampType": lampType, "maxLux": maxLux, "minTemp": minTempInTF, "maxTemp": maxTempInTF, "power": power]
-        handleNewProjector(values as [String : AnyObject])
+        handleImageUpload(values: values as [String : AnyObject])
+        //handleNewProjector(values as [String : AnyObject])
         
         navigationController?.popViewController(animated: true)
     }
+    
+    func handleImageUpload(values: [String: AnyObject]){
+        var values1 = values
+        // upload the user image.
+        let storageRef = Storage.storage().reference().child("ProjectorProfileImages").child(NSUUID().uuidString)
+        
+        // Create file metadata to update
+        let newMetadata = StorageMetadata()
+        newMetadata.cacheControl = "public,max-age=300";
+        newMetadata.contentType = "image/jpeg";
+        
+        if let uploadData = (self.projectorImageView.image!).pngData(){
+            storageRef.putData(uploadData, metadata: newMetadata, completion: { (metadata, errorForUpload) in
+                // if uploading has errors
+                if errorForUpload != nil {
+                    print(errorForUpload)
+                    return
+                }
+                storageRef.downloadURL(completion: { (url, error) in
+                    if error != nil {
+                        print(error)
+                        return
+                    }
+                    if let ProjectorProfileImageURL = url?.absoluteString{
+                        values1["projectorProfileImageURL"] = url?.absoluteString as AnyObject
+                        self.handleNewProjector(values1)
+                    }
+                })
+                
+            })
+        }
+    }
+    
     
     func handleNewProjector(_ values: [String : AnyObject]){
 //        currentUserRef.updateChildValues(values)

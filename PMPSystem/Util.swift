@@ -31,4 +31,35 @@ class Util: NSObject{
         UIGraphicsEndImageContext()
         return newImage!
     }
+    
+    class func calcutateIlluminance(red: Double, green: Double, blue: Double) -> Double{
+        let redValue = red * 64
+        let greenValue = green * 64
+        let blueValue = blue * 64
+        
+        let illuminance = (-0.32466) * redValue + (1.57837) * greenValue + (-0.73191) * blueValue
+        
+        return illuminance
+    }
+    
+    class func calcuateColourTemperature(red: Double, green: Double, blue: Double) -> Double{
+        let redValue = red * 64
+        let greenValue = green * 64
+        let blueValue = blue * 64
+        
+        let CIETristimulusX = (-0.14282) * redValue + (1.54924) * greenValue + (-0.95641) * blueValue
+        let CIETristimulusY = Util.calcutateIlluminance(red: red, green: green, blue: blue)
+        let CIETristimulusZ = (-0.68202) * redValue + (0.77073) * greenValue + (0.56332) * blueValue
+        
+        let chromaticityCoordinateX = CIETristimulusX / (CIETristimulusX + CIETristimulusY + CIETristimulusZ)
+        let chromaticityCoordinateY = CIETristimulusY / (CIETristimulusX + CIETristimulusY + CIETristimulusZ)
+        
+        let n = (chromaticityCoordinateX - 0.3320) / (0.1858 - chromaticityCoordinateY)
+        
+        var correlatedColourTemperature = 449 * pow(n, 3) + 3525 * pow(n, 2) + 5520.33
+        
+        correlatedColourTemperature = Double(round(1000*correlatedColourTemperature)/1000)
+        
+        return correlatedColourTemperature
+    }
 }
