@@ -10,7 +10,8 @@ import UIKit
 
 class ProjectorManagementCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var projectorImage: UIImageView!
-    
+    @IBOutlet weak var projectAlias: UILabel!
+    @IBOutlet weak var projectBrand: UILabel!
     required init?(coder aDecoder: NSCoder) {
         super.init(coder:aDecoder)
     }

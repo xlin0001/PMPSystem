@@ -32,7 +32,7 @@ class ViewController: UITabBarController {
         self.activityIndicator.style = UIActivityIndicatorView.Style.gray
         self.view.addSubview(self.activityIndicator)
         self.activityIndicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
+        //UIApplication.shared.beginIgnoringInteractionEvents()
         
         if Auth.auth().currentUser?.uid != nil{
             myUser?.uid = Auth.auth().currentUser?.uid
