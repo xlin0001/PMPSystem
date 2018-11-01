@@ -26,7 +26,6 @@ class ProjectorManagementTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         myUser = MyUser.onlyUser
-        handleProjectors()
     }
 
     // MARK: - Table view data source
@@ -36,24 +35,20 @@ class ProjectorManagementTableViewController: UITableViewController {
         return 1
     }
     
-    func handleProjectors(){
-        //从这里下载并更新collection view
-        
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "welcomeCell", for: indexPath) as! WelcomeCell
-            cell.imageView?.image = UIImage(named: "whiteboard")
+            cell.welcomeImage?.image = UIImage(named: "whiteboard")
             return cell
         }
         if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "collectionCell", for: indexPath) as! ProjectorsTableViewCell
+            cell.handleProjectors()
             return cell
         }
         return WelcomeCell()
@@ -65,12 +60,12 @@ class ProjectorManagementTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 150
+            return 50
         }
         if indexPath.row == 1 {
-            return 400
+            return 350
         }
-        return 1000
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
