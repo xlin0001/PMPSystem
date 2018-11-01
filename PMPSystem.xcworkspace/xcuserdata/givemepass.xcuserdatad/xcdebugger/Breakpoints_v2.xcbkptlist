@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/ProjectorsTableViewCell.swift"
-            timestampString = "562417335.0477329"
+            timestampString = "562667122.301192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
             endingLineNumber = "44"
-            landmarkName = "handleProjectors()"
-            landmarkType = "7">
+            landmarkName = "ProjectorsTableViewCell"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,13 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PMPSystem/ProjectorsTableViewCell.swift"
-            timestampString = "562472929.84667"
+            timestampString = "562667122.301281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
             endingLineNumber = "43"
-            landmarkName = "handleProjectors()"
-            landmarkType = "7">
+            landmarkName = "ProjectorsTableViewCell"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
