@@ -19,10 +19,13 @@ class ProjectorsTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
     }
     
     func handleProjectors(){
+        guard var userUID = Auth.auth().currentUser?.uid else {
+            return
+        }
         //retrieve the data from firebase
         let refHandle = Database.database().reference(fromURL: "https://pmpsystem-f537e.firebaseio.com/")
-        let userUID = Auth.auth().currentUser?.uid
-        let currentUserRef = refHandle.child("users").child(userUID!).child("projectors")
+        userUID = (Auth.auth().currentUser?.uid)!
+        let currentUserRef = refHandle.child("users").child(userUID).child("projectors")
         currentUserRef.observe(DataEventType.value, with: {(snapshot) in
             if snapshot.childrenCount > 0{
                 self.projectorsList.removeAll()
