@@ -20,6 +20,8 @@ class ViewController: UITabBarController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+
+        
         refHandle = Database.database().reference(fromURL: "https://pmpsystem-f537e.firebaseio.com/")
         myUser = MyUser.onlyUser
         handleUser(myUser!)
@@ -31,7 +33,7 @@ class ViewController: UITabBarController {
         self.activityIndicator.hidesWhenStopped = true
         self.activityIndicator.style = UIActivityIndicatorView.Style.gray
         self.view.addSubview(self.activityIndicator)
-        self.activityIndicator.startAnimating()
+        //self.activityIndicator.startAnimating()
         //UIApplication.shared.beginIgnoringInteractionEvents()
         
         if Auth.auth().currentUser?.uid != nil{
@@ -57,8 +59,8 @@ class ViewController: UITabBarController {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // in half a second...
                         self.myUser?.identityImage = UIImage(data: data!)
                         let infoController = InfoViewController()
-                        self.activityIndicator.stopAnimating()
-                        UIApplication.shared.endIgnoringInteractionEvents()
+                        //self.activityIndicator.stopAnimating()
+                        //UIApplication.shared.endIgnoringInteractionEvents()
                     }
                 }).resume()
             })

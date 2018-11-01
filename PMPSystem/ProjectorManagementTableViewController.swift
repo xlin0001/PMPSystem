@@ -17,6 +17,11 @@ class ProjectorManagementTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // user didn't loggin
+        if Auth.auth().currentUser?.uid == nil{
+            self.present(LoginViewController(), animated: true)
+            
+        }
 
         tableView.delegate = self
         tableView.dataSource = self
