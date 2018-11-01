@@ -45,6 +45,7 @@ class ProjectorsTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
                     let type = projectors["type"] as! String
                     let profileImageURL = projectors["projectorProfileImageURL"] as? String ?? ""
                     self.imageURLList.append(profileImageURL)
+                    
                    /* let url = URL(string: profileImageURL)
                     
                     URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
@@ -81,6 +82,20 @@ class ProjectorsTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         cell.layer.masksToBounds = true
         cell.projectAlias.text = projectorsList[indexPath.row].alias
         cell.projectBrand.text = projectorsList[indexPath.row].brand
+        let urlString = self.imageURLList[indexPath.row]
+         let url = URL(string: urlString)
+         
+         URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+         if error != nil {
+         // if download hits an error, so lets return out
+         print(error)
+         return
+         }
+         // if there is no error happens...
+         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // in half a second...
+         cell.projectorImage.image = UIImage(data: data!)
+         }
+         }).resume()
         return cell
     }
     

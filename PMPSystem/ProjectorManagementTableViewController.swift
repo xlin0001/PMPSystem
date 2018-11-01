@@ -22,11 +22,10 @@ class ProjectorManagementTableViewController: UITableViewController {
             self.present(LoginViewController(), animated: true)
             
         }
-
+        
         tableView.delegate = self
         tableView.dataSource = self
-        
-    }
+        }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -65,7 +64,7 @@ class ProjectorManagementTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 50
+            return 100
         }
         if indexPath.row == 1 {
             return 350
