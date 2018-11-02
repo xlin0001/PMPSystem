@@ -18,11 +18,18 @@ class InfoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
+        self.navigationController?.navigationBar.barTintColor  = UIColor(red: 61, green: 91, blue: 151)
+         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         tableView.tableFooterView = UIView()
+        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
+        self.navigationController?.navigationBar.barTintColor  = UIColor(red: 61, green: 91, blue: 151)
         myUser = MyUser.onlyUser
         setupPicture(pictureView: profileImageView)
         profileEmailLabel.text = myUser?.emailAddress

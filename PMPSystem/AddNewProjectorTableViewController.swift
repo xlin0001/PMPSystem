@@ -84,12 +84,17 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
+        self.navigationController?.navigationBar.barTintColor  = UIColor(red: 61, green: 91, blue: 151)
         tableView.tableFooterView = UIView()
         self.projectorTypeTextField.delegate = self
         self.lightSourceTextField.delegate = self
         handlePicker()
         navigationItem.title = "Add A New Projector"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneSave))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.white
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.white
+
     }
 
     private var projectorTypePickerView: UIPickerView = {

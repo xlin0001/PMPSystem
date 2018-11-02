@@ -17,7 +17,8 @@ class ProjectorManagementTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
+        self.navigationController?.navigationBar.barTintColor  = UIColor(red: 61, green: 91, blue: 151)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -30,6 +31,8 @@ class ProjectorManagementTableViewController: UITableViewController {
             self.present(LoginViewController(), animated: true)
             
         }
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
+        self.navigationController?.navigationBar.barTintColor  = UIColor(red: 61, green: 91, blue: 151);
         super.viewWillAppear(true)
         myUser = MyUser.onlyUser
     }

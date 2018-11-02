@@ -39,12 +39,17 @@ class AdminInfoTableViewController: UITableViewController, UITextFieldDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
+        self.navigationController?.navigationBar.barTintColor  = UIColor(red: 61, green: 91, blue: 151)
         loadAdminData()
         self.stateTextField.delegate = self
         handlePicker()
         tableView.tableFooterView = UIView()
         navigationItem.title = "Edit my information"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneSave))
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.white
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.white
+
     }
     
     @objc func doneSave(){
