@@ -31,6 +31,7 @@
 		A7636E1121804895002D7162 /* ProjectorManagementCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7636E1021804895002D7162 /* ProjectorManagementCollectionViewCell.swift */; };
 		A7636E152180597C002D7162 /* ProjectorsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7636E142180597C002D7162 /* ProjectorsTableViewCell.swift */; };
 		A7636E17218195B7002D7162 /* MyProjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7636E16218195B7002D7162 /* MyProjector.swift */; };
+		A7636E1B218B00BD002D7162 /* MonashUniversityCampus.gpx in Resources */ = {isa = PBXBuildFile; fileRef = A7636E1A218B00BD002D7162 /* MonashUniversityCampus.gpx */; };
 		A7CDB296217F2FCF00E60F73 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CDB295217F2FCE00E60F73 /* Util.swift */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +86,7 @@
 		A7636E1021804895002D7162 /* ProjectorManagementCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectorManagementCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7636E142180597C002D7162 /* ProjectorsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectorsTableViewCell.swift; sourceTree = "<group>"; };
 		A7636E16218195B7002D7162 /* MyProjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProjector.swift; sourceTree = "<group>"; };
+		A7636E1A218B00BD002D7162 /* MonashUniversityCampus.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = MonashUniversityCampus.gpx; sourceTree = "<group>"; };
 		A7CDB295217F2FCE00E60F73 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		CE20F64F4AF65EE6C608AE4A /* Pods-PMPSystemUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMPSystemUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PMPSystemUITests/Pods-PMPSystemUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E68E5DB340C5F4EF55EC2AC5 /* Pods_PMPSystemUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PMPSystemUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +124,7 @@
 		A7109A3D216A0A7200E3C029 = {
 			isa = PBXGroup;
 			children = (
+				A7636E1A218B00BD002D7162 /* MonashUniversityCampus.gpx */,
 				0AEA20A7216ED3F5009214A5 /* Assets.xcassets */,
 				A7109A7E216A5CD100E3C029 /* GoogleService-Info.plist */,
 				A7109A48216A0A7200E3C029 /* PMPSystem */,
@@ -321,6 +324,7 @@
 				A7109A57216A0A7700E3C029 /* LaunchScreen.storyboard in Resources */,
 				A7109A7F216A5CD100E3C029 /* GoogleService-Info.plist in Resources */,
 				0AEA20A8216ED3F5009214A5 /* Assets.xcassets in Resources */,
+				A7636E1B218B00BD002D7162 /* MonashUniversityCampus.gpx in Resources */,
 				A7109A4F216A0A7200E3C029 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,8 +8,13 @@
 
 import UIKit
 import Firebase
+import MapKit
 
-class AddNewProjectorTableViewController: UITableViewController,UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddNewProjectorTableViewController: UITableViewController,UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
+    
+    var currentLocation: CLLocationCoordinate2D?
+    var locationLat: String?
+    var locationLng: String?
 
     private let MIN_TEMP_COMPONENT = 0
     private let MAX_TEMP_COMPONENT = 1
@@ -238,7 +243,7 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
         let maxTempInTF = String((temps[1])).trimmingCharacters(in: .whitespacesAndNewlines)
         
         
-        let values = ["alias": alias, "brand": brand, "type": type, "date": date, "location": location, "lampType": lampType, "maxLux": maxLux, "minTemp": minTempInTF, "maxTemp": maxTempInTF, "power": power]
+        let values = ["alias": alias, "brand": brand, "type": type, "date": date, "location": location, "lampType": lampType, "maxLux": maxLux, "minTemp": minTempInTF, "maxTemp": maxTempInTF, "power": power, "latitude": locationLat, "longitude": locationLng]
         handleImageUpload(values: values as [String : AnyObject])
         //handleNewProjector(values as [String : AnyObject])
         
@@ -459,4 +464,34 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func handleLocationButton(_ sender: Any) {
+        if let currentLocation = currentLocation {
+            self.locationLat = String(currentLocation.latitude)
+            self.locationLng = String(currentLocation.longitude)
+            self.locationTextField.text = "Current Location"
+            //currentLatTextField.text = "\(currentLocation.latitude)"
+            //currentLongTextField.text = "\(currentLocation.longitude)"
+        } else {
+            // if the current address service is not available...
+            let alertController = UIAlertController(title: "Check your location settings", message: "There was an error in getting the current location, do you want to use Monash Caulfield Campus address?", preferredStyle: .alert)
+            // use monash address..
+            alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default,
+                                                    handler: { (action:UIAlertAction!) -> Void in
+                                                        //after user press ok, the following code will be execute
+                                                        self.locationTextField.text = "Monash Caulfield Campus"
+                                                        self.locationLat = "-37.8770"
+                                                        self.locationLng = "145.0443"
+                                                        
+                                                        
+            }))
+            alertController.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+            present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    // tells the delegate that the location has been updated
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let loc: CLLocation = locations.last!
+        currentLocation = loc.coordinate
+    }
 }

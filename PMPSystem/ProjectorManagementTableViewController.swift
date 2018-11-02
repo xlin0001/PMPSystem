@@ -20,7 +20,6 @@ class ProjectorManagementTableViewController: UITableViewController {
         // user didn't loggin
         if Auth.auth().currentUser?.uid == nil{
             self.present(LoginViewController(), animated: true)
-            
         }
 
         tableView.delegate = self
@@ -42,7 +41,7 @@ class ProjectorManagementTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,6 +54,10 @@ class ProjectorManagementTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "collectionCell", for: indexPath) as! ProjectorsTableViewCell
             cell.handleProjectors()
             return cell
+        }
+        if indexPath.row == 2 {
+            print("this line called")
+            
         }
         return WelcomeCell()
     }
