@@ -18,6 +18,23 @@ class MyProjector: NSObject {
     var minTemp: Double?
     var power: Double?
     var type: String?
+    var longitude: Double?
+    var latitude: Double?
+    
+    init(alias: String, brand: String, date: Date, lampType: String, location: String, maxLux: Double, maxTemp: Double, minTemp: Double, power: Double, type: String, longitude: Double, latitude: Double) {
+        self.alias = alias
+        self.brand = brand
+        self.date = date
+        self.lampType = lampType
+        self.location = location
+        self.maxLux = maxLux
+        self.maxTemp = maxTemp
+        self.minTemp = minTemp
+        self.power = power
+        self.type = type
+        self.longitude = longitude
+        self.latitude = latitude
+    }
     
     init(alias: String, brand: String, date: Date, lampType: String, location: String, maxLux: Double, maxTemp: Double, minTemp: Double, power: Double, type: String) {
         self.alias = alias

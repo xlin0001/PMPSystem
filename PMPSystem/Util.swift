@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class Util: NSObject{
     //static method to resize image, take a image and a target size as primeters.
@@ -62,4 +63,12 @@ class Util: NSObject{
         
         return correlatedColourTemperature
     }
+    
+    class func removeStringQuotationMark(string: String) -> String {
+        var str = string
+        str.remove(at: str.startIndex)
+        str.remove(at: str.endIndex)
+        return str
+    }
+    
 }

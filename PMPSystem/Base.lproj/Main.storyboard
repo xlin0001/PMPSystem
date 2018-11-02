@@ -818,6 +818,35 @@
             </objects>
             <point key="canvasLocation" x="-1095" y="-1773"/>
         </scene>
+        <!--Find Projector View Controller-->
+        <scene sceneID="OVA-eh-iBi">
+            <objects>
+                <viewController id="psZ-ik-Bho" customClass="FindProjectorViewController" customModule="PMPSystem" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VwH-cX-iBD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="exu-2t-8cN">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="exu-2t-8cN" firstAttribute="leading" secondItem="5Ls-Vb-jbp" secondAttribute="leading" id="H85-ct-QUm"/>
+                            <constraint firstItem="exu-2t-8cN" firstAttribute="top" secondItem="5Ls-Vb-jbp" secondAttribute="top" id="TlW-qG-klT"/>
+                            <constraint firstItem="5Ls-Vb-jbp" firstAttribute="bottom" secondItem="exu-2t-8cN" secondAttribute="bottom" id="goU-3C-uMD"/>
+                            <constraint firstItem="5Ls-Vb-jbp" firstAttribute="trailing" secondItem="exu-2t-8cN" secondAttribute="trailing" id="wsz-hK-BAx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5Ls-Vb-jbp"/>
+                    </view>
+                    <connections>
+                        <outlet property="projectorMapView" destination="exu-2t-8cN" id="vwk-2P-kKu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t0L-YF-KiP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4257" y="-2316"/>
+        </scene>
         <!--Table View Controller-->
         <scene sceneID="Kn1-sl-fja">
             <objects>
@@ -939,7 +968,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMb-qZ-FZu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4199" y="-1745"/>
+            <point key="canvasLocation" x="4257" y="-1612"/>
         </scene>
         <!--Item-->
         <scene sceneID="NTK-9X-HtC">
@@ -1151,6 +1180,9 @@
                                         <constraint firstAttribute="bottom" secondItem="ks2-F0-E3h" secondAttribute="bottom" constant="5" id="j3l-fU-avc"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="psZ-ik-Bho" kind="show" id="ibG-q5-f8w"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
