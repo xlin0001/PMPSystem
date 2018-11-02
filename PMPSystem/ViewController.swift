@@ -47,9 +47,11 @@ class ViewController: UITabBarController {
                 self.myUser?.name = value?["name"] as? String ?? ""
                 let profileImageURL = value?["identityImageURL"] as? String ?? ""
 
-                let url = URL(string: profileImageURL)
+                //let url = URL(string: profileImageURL)
                 
-                URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+                guard let url = URL(string: profileImageURL) else { return }
+                
+                URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
                     if error != nil {
                         // if download hits an error, so lets return out
                         print(error)
