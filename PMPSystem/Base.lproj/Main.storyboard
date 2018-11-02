@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dMH-Vg-acD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dMH-Vg-acD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -425,6 +425,14 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3x-lq-7ec">
+                                                    <rect key="frame" x="216" y="3" width="143" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Use current Location"/>
+                                                    <connections>
+                                                        <action selector="handleLocationButton:" destination="lM4-p3-Rtx" eventType="touchUpInside" id="L1a-Ij-Afn"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -541,7 +549,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rpf-yh-KjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5188" y="-1195"/>
+            <point key="canvasLocation" x="5188" y="-1195.5022488755624"/>
         </scene>
         <!--Admin Info Table View Controller-->
         <scene sceneID="UYl-Tr-PHw">
@@ -1235,12 +1243,12 @@
     <resources>
         <image name="man-user" width="32" height="32"/>
         <image name="more-details-circular-button" width="32" height="32"/>
-        <image name="placeholder-2" width="64" height="64"/>
-        <image name="projector" width="128" height="128"/>
+        <image name="placeholder-2" width="46.545455932617188" height="46.545455932617188"/>
+        <image name="projector" width="46.311557769775391" height="46.311557769775391"/>
         <image name="projector-with-big-len" width="32" height="32"/>
-        <image name="resume" width="64" height="64"/>
-        <image name="tips" width="64" height="64"/>
-        <image name="user-3" width="128" height="128"/>
+        <image name="resume" width="418.90908813476562" height="418.90908813476562"/>
+        <image name="tips" width="418.90908813476562" height="418.90908813476562"/>
+        <image name="user-3" width="42.470046997070312" height="42.470046997070312"/>
         <image name="video-projector" width="64" height="64"/>
         <image name="warning-2" width="64" height="64"/>
     </resources>
