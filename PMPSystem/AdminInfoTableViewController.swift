@@ -42,6 +42,7 @@ class AdminInfoTableViewController: UITableViewController, UITextFieldDelegate, 
         loadAdminData()
         self.stateTextField.delegate = self
         handlePicker()
+        tableView.tableFooterView = UIView()
         navigationItem.title = "Edit my information"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneSave))
     }

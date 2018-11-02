@@ -17,17 +17,19 @@ class ProjectorManagementTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // user didn't loggin
-        if Auth.auth().currentUser?.uid == nil{
-            self.present(LoginViewController(), animated: true)
-            
-        }
+
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView()
         }
     
     override func viewWillAppear(_ animated: Bool) {
+        if Auth.auth().currentUser?.uid == nil{
+            self.dismiss(animated: true, completion: nil)
+            self.present(LoginViewController(), animated: true)
+            
+        }
         super.viewWillAppear(true)
         myUser = MyUser.onlyUser
     }
@@ -41,7 +43,7 @@ class ProjectorManagementTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -53,6 +55,14 @@ class ProjectorManagementTableViewController: UITableViewController {
         if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "collectionCell", for: indexPath) as! ProjectorsTableViewCell
             cell.handleProjectors()
+            return cell
+        }
+        if indexPath.row == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "funcCell", for: indexPath) 
+            return cell
+        }
+        if indexPath.row == 3 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "func2Cell", for: indexPath)
             return cell
         }
         return WelcomeCell()
@@ -69,17 +79,16 @@ class ProjectorManagementTableViewController: UITableViewController {
         if indexPath.row == 1 {
             return 350
         }
+        if indexPath.row == 2{
+            return 75
+        }
+        if indexPath.row == 3{
+            return 75
+        }
         return 0
     }
     
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        if section == 0 {
-            return 0
-        }
-        return 0 
-    }
     
-
 
     /*
     // Override to support conditional editing of the table view.

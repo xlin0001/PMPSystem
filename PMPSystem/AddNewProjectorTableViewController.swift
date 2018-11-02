@@ -84,6 +84,7 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView()
         self.projectorTypeTextField.delegate = self
         self.lightSourceTextField.delegate = self
         handlePicker()
