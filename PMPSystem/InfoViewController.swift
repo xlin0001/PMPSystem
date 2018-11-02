@@ -25,6 +25,8 @@ class InfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem?.tintColor = .white
+        navigationController?.navigationBar.tintColor = .white
     }
     
     /*

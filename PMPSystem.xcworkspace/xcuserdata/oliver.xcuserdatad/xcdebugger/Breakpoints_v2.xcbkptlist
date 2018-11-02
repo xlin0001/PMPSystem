@@ -736,7 +736,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "300"
             endingLineNumber = "300"
-            landmarkName = "numberOfComponents(in:)"
+            landmarkName = "handleNewProjector(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -752,7 +752,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "212"
             endingLineNumber = "212"
-            landmarkName = "dissmissKeyBoard()"
+            landmarkName = "handleMaxTemp(minTemp:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -768,7 +768,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "116"
             endingLineNumber = "116"
-            landmarkName = "projectInstallationDatePickerView"
+            landmarkName = "projectorBrandPickerView"
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
@@ -784,7 +784,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "319"
             endingLineNumber = "319"
-            landmarkName = "pickerView(_:numberOfRowsInComponent:)"
+            landmarkName = "numberOfComponents(in:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -800,7 +800,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "340"
             endingLineNumber = "340"
-            landmarkName = "pickerView(_:titleForRow:forComponent:)"
+            landmarkName = "pickerView(_:numberOfRowsInComponent:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -816,7 +816,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "341"
             endingLineNumber = "341"
-            landmarkName = "pickerView(_:titleForRow:forComponent:)"
+            landmarkName = "pickerView(_:numberOfRowsInComponent:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -832,8 +832,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "339"
             endingLineNumber = "339"
-            landmarkName = "AddNewProjectorTableViewController"
-            landmarkType = "3">
+            landmarkName = "pickerView(_:numberOfRowsInComponent:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1110,8 +1110,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "391"
             endingLineNumber = "391"
-            landmarkName = "AddNewProjectorTableViewController"
-            landmarkType = "3">
+            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1126,7 +1126,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "226"
             endingLineNumber = "226"
-            landmarkName = "doneSave()"
+            landmarkName = "copyDateToTextField()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1158,7 +1158,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "320"
             endingLineNumber = "320"
-            landmarkName = "pickerView(_:numberOfRowsInComponent:)"
+            landmarkName = "numberOfComponents(in:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
