@@ -78,21 +78,21 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="user-3" translatesAutoresizingMaskIntoConstraints="NO" id="ZKi-Mp-KUE">
-                                                    <rect key="frame" x="25" y="17" width="108" height="102"/>
+                                                    <rect key="frame" x="25" y="25" width="108" height="88"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="108" id="E6A-Zn-2nJ"/>
-                                                        <constraint firstAttribute="height" constant="102" id="Vsz-hm-cGO"/>
+                                                        <constraint firstAttribute="height" constant="88" id="Vsz-hm-cGO"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Ldd-kj-hR9" secondAttribute="trailing" constant="116.5" id="6ob-Jh-DFR"/>
                                                 <constraint firstItem="ZKi-Mp-KUE" firstAttribute="leading" secondItem="LHT-iC-pIz" secondAttribute="leadingMargin" constant="9" id="DGC-1F-pzn"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ZKi-Mp-KUE" secondAttribute="bottom" constant="8" id="Osh-2j-a43"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ZKi-Mp-KUE" secondAttribute="bottom" constant="14" id="Osh-2j-a43"/>
                                                 <constraint firstItem="Ldd-kj-hR9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZKi-Mp-KUE" secondAttribute="trailing" constant="8" symbolic="YES" id="TCd-MQ-QFc"/>
                                                 <constraint firstItem="Ldd-kj-hR9" firstAttribute="top" secondItem="LHT-iC-pIz" secondAttribute="topMargin" constant="14" id="XR3-b7-gHF"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Ldd-kj-hR9" secondAttribute="bottom" constant="14" id="XsF-uQ-nxj"/>
-                                                <constraint firstItem="ZKi-Mp-KUE" firstAttribute="top" secondItem="LHT-iC-pIz" secondAttribute="topMargin" constant="6" id="eVQ-1A-UhX"/>
+                                                <constraint firstItem="ZKi-Mp-KUE" firstAttribute="top" secondItem="LHT-iC-pIz" secondAttribute="topMargin" constant="14" id="eVQ-1A-UhX"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
