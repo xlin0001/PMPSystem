@@ -254,7 +254,7 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
     }
     
     @objc func doneSave(){
-        guard let brand = projectorNameTextField.text, let type = projectorTypeTextField.text, let date = dateTextField.text, let location = locationTextField.text, let lampType = lightSourceTextField.text, let maxLux = maximumLuxTextField.text, let alias = projectorAliasTextField.text, let tempText = operatingTempTextField.text, let power = powerConsumTextField.text else {
+        guard let brand = projectorNameTextField.text, let type = projectorTypeTextField.text, let date = dateTextField.text, let location = locationTextField.text, let lampType = lightSourceTextField.text, let maxLux = maximumLuxTextField.text, let alias = projectorAliasTextField.text, let tempText = operatingTempTextField.text, let power = powerConsumTextField.text, let locationLat = self.locationLat, let locationLng = self.locationLng, let sensor = self.projectorAssociatedSensorTextField.text else {
             print("Add projector no enough info")
             return
         }
@@ -274,7 +274,7 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
         let maxTempInTF = String((temps[1])).trimmingCharacters(in: .whitespacesAndNewlines)
         
         
-        let values = ["alias": alias, "brand": brand, "type": type, "date": date, "location": location, "lampType": lampType, "maxLux": maxLux, "minTemp": minTempInTF, "maxTemp": maxTempInTF, "power": power, "latitude": locationLat, "longitude": locationLng]
+        let values = ["alias": alias, "brand": brand, "type": type, "date": date, "location": location, "lampType": lampType, "maxLux": maxLux, "minTemp": minTempInTF, "maxTemp": maxTempInTF, "power": power, "latitude": locationLat, "longitude": locationLng, "sensor": sensor]
         handleImageUpload(values: values as [String : AnyObject])
         //handleNewProjector(values as [String : AnyObject])
         
