@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dMH-Vg-acD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dMH-Vg-acD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -78,21 +78,21 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="user-3" translatesAutoresizingMaskIntoConstraints="NO" id="ZKi-Mp-KUE">
-                                                    <rect key="frame" x="25" y="17" width="108" height="102"/>
+                                                    <rect key="frame" x="25" y="25" width="108" height="88"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="108" id="E6A-Zn-2nJ"/>
-                                                        <constraint firstAttribute="height" constant="102" id="Vsz-hm-cGO"/>
+                                                        <constraint firstAttribute="height" constant="88" id="Vsz-hm-cGO"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Ldd-kj-hR9" secondAttribute="trailing" constant="116.5" id="6ob-Jh-DFR"/>
                                                 <constraint firstItem="ZKi-Mp-KUE" firstAttribute="leading" secondItem="LHT-iC-pIz" secondAttribute="leadingMargin" constant="9" id="DGC-1F-pzn"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ZKi-Mp-KUE" secondAttribute="bottom" constant="8" id="Osh-2j-a43"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ZKi-Mp-KUE" secondAttribute="bottom" constant="14" id="Osh-2j-a43"/>
                                                 <constraint firstItem="Ldd-kj-hR9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZKi-Mp-KUE" secondAttribute="trailing" constant="8" symbolic="YES" id="TCd-MQ-QFc"/>
                                                 <constraint firstItem="Ldd-kj-hR9" firstAttribute="top" secondItem="LHT-iC-pIz" secondAttribute="topMargin" constant="14" id="XR3-b7-gHF"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Ldd-kj-hR9" secondAttribute="bottom" constant="14" id="XsF-uQ-nxj"/>
-                                                <constraint firstItem="ZKi-Mp-KUE" firstAttribute="top" secondItem="LHT-iC-pIz" secondAttribute="topMargin" constant="6" id="eVQ-1A-UhX"/>
+                                                <constraint firstItem="ZKi-Mp-KUE" firstAttribute="top" secondItem="LHT-iC-pIz" secondAttribute="topMargin" constant="14" id="eVQ-1A-UhX"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -925,15 +925,15 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Projector Mangement" id="ayf-8s-WMM">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ewh-tK-fu3">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="ewh-tK-fu3">
                                         <rect key="frame" x="0.0" y="316" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ewh-tK-fu3" id="DXl-Uo-AIQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRX-RY-2PF">
-                                                    <rect key="frame" x="16" y="5.5" width="343" height="32.5"/>
+                                                    <rect key="frame" x="16" y="5.5" width="303" height="32.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -947,15 +947,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="f9m-sn-3dg">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="f9m-sn-3dg">
                                         <rect key="frame" x="0.0" y="360" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f9m-sn-3dg" id="PC1-vm-JfG">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AIq-VS-mSE">
-                                                    <rect key="frame" x="16" y="5.5" width="343" height="32.5"/>
+                                                    <rect key="frame" x="16" y="5.5" width="303" height="32.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -969,15 +969,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="2Hz-23-3Vi">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" id="2Hz-23-3Vi">
                                         <rect key="frame" x="0.0" y="404" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Hz-23-3Vi" id="ohV-f0-5TR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="327" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iN-r3-psC">
-                                                    <rect key="frame" x="16" y="5.5" width="343" height="32.5"/>
+                                                    <rect key="frame" x="16" y="5.5" width="303" height="32.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1009,7 +1009,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMb-qZ-FZu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4089" y="-1488"/>
+            <point key="canvasLocation" x="4088.8000000000002" y="-1488.305847076462"/>
         </scene>
         <!--Detailed Table View Controller-->
         <scene sceneID="pnH-qW-Zsu">
@@ -1527,7 +1527,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="62.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RcU-AA-2uP">
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RcU-AA-2uP">
                                             <rect key="frame" x="308" y="15" width="51" height="32"/>
                                         </switch>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O5x-2e-gjK">
@@ -1661,16 +1661,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon" width="25.600000381469727" height="25.600000381469727"/>
-        <image name="placeholder-2" width="46.545455932617188" height="46.545455932617188"/>
-        <image name="projector" width="46.311557769775391" height="46.311557769775391"/>
+        <image name="icon" width="32" height="32"/>
+        <image name="placeholder-2" width="64" height="64"/>
+        <image name="projector" width="128" height="128"/>
         <image name="projector-with-big-len" width="32" height="32"/>
-        <image name="resume" width="418.90908813476562" height="418.90908813476562"/>
-        <image name="tips" width="418.90908813476562" height="418.90908813476562"/>
-        <image name="user-3" width="42.470046997070312" height="42.470046997070312"/>
-        <image name="user-4" width="25.600000381469727" height="25.600000381469727"/>
+        <image name="resume" width="64" height="64"/>
+        <image name="tips" width="64" height="64"/>
+        <image name="user-3" width="128" height="128"/>
+        <image name="user-4" width="32" height="32"/>
         <image name="video-projector" width="64" height="64"/>
-        <image name="video-projector-2" width="25.600000381469727" height="25.600000381469727"/>
+        <image name="video-projector-2" width="32" height="32"/>
         <image name="warning-2" width="64" height="64"/>
     </resources>
 </document>
