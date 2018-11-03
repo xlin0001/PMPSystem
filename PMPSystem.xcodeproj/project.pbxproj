@@ -174,8 +174,8 @@
 				A7636E0E21803C16002D7162 /* ProjectorManagementTableViewController.swift */,
 				A7636E1021804895002D7162 /* ProjectorManagementCollectionViewCell.swift */,
 				A7636E142180597C002D7162 /* ProjectorsTableViewCell.swift */,
-				A7BA1FC1218C0D5000CA36C4 /* FindProjectorViewController.swift */,
 				A7BA1FC3218C1A9900CA36C4 /* ProjectorMapAnnotation.swift */,
+				A7BA1FC1218C0D5000CA36C4 /* FindProjectorViewController.swift */,
 				A7BA1FC5218C5B7900CA36C4 /* AddLocationOnMapViewController.swift */,
 			);
 			path = PMPSystem;
