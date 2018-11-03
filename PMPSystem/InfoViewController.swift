@@ -27,6 +27,7 @@ class InfoViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem?.tintColor = .white
         navigationController?.navigationBar.tintColor = .white
+        
     }
     
     /*

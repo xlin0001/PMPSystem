@@ -1,24 +1,21 @@
 //
-//  ProjectorsTableViewCell.swift
+//  ReportTableViewCell.swift
 //  PMPSystem
 //
-//  Created by Oliver Lin on 24/10/18.
-//  Copyright © 2018 Monash University. All rights reserved.
+//  Created by 沈宇帆 on 2018/11/3.
+//  Copyright © 2018年 Monash University. All rights reserved.
 //
 
 import UIKit
-import Firebase
-import FirebaseDatabase
 
-class ProjectorsTableViewCell: UITableViewCell {
-    @IBOutlet weak var collectionView: UICollectionView!
-
+class ReportTableViewCell: UITableViewCell {
+    @IBOutlet weak var projectorImg: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var switchBtn: UISwitch!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-    
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

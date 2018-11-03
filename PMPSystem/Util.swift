@@ -38,8 +38,8 @@ class Util: NSObject{
         let greenValue = green * 64
         let blueValue = blue * 64
         
-        let illuminance = (-0.32466) * redValue + (1.57837) * greenValue + (-0.73191) * blueValue
-        
+        var illuminance = (-0.32466) * redValue + (1.57837) * greenValue + (-0.73191) * blueValue
+         illuminance = Double(round(1000*illuminance)/1000)
         return illuminance
     }
     
