@@ -34,6 +34,7 @@
 		A7636E1B218B00BD002D7162 /* MonashUniversityCampus.gpx in Resources */ = {isa = PBXBuildFile; fileRef = A7636E1A218B00BD002D7162 /* MonashUniversityCampus.gpx */; };
 		A7BA1FC2218C0D5000CA36C4 /* FindProjectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA1FC1218C0D5000CA36C4 /* FindProjectorViewController.swift */; };
 		A7BA1FC4218C1A9900CA36C4 /* ProjectorMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA1FC3218C1A9900CA36C4 /* ProjectorMapAnnotation.swift */; };
+		A7BA1FC6218C5B7900CA36C4 /* AddLocationOnMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA1FC5218C5B7900CA36C4 /* AddLocationOnMapViewController.swift */; };
 		A7CDB296217F2FCF00E60F73 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CDB295217F2FCE00E60F73 /* Util.swift */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		A7636E1A218B00BD002D7162 /* MonashUniversityCampus.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = MonashUniversityCampus.gpx; sourceTree = "<group>"; };
 		A7BA1FC1218C0D5000CA36C4 /* FindProjectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindProjectorViewController.swift; sourceTree = "<group>"; };
 		A7BA1FC3218C1A9900CA36C4 /* ProjectorMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectorMapAnnotation.swift; sourceTree = "<group>"; };
+		A7BA1FC5218C5B7900CA36C4 /* AddLocationOnMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationOnMapViewController.swift; sourceTree = "<group>"; };
 		A7CDB295217F2FCE00E60F73 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		CE20F64F4AF65EE6C608AE4A /* Pods-PMPSystemUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMPSystemUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PMPSystemUITests/Pods-PMPSystemUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E68E5DB340C5F4EF55EC2AC5 /* Pods_PMPSystemUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PMPSystemUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,8 +160,8 @@
 				A7109A8221746F4E00E3C029 /* ItemOneViewController.swift */,
 				A7109A882176EEA000E3C029 /* AdminInfoTableViewController.swift */,
 				A7109A7A216A18B200E3C029 /* LoginViewController.swift */,
-				A7109A8A2179C9C000E3C029 /* AddNewProjectorTableViewController.swift */,
 				A7109A80217467B100E3C029 /* InfoViewController.swift */,
+				A7109A8A2179C9C000E3C029 /* AddNewProjectorTableViewController.swift */,
 				A7109A8421747F6000E3C029 /* InfoTableViewController.swift */,
 				A7109A86217482D100E3C029 /* MyUser.swift */,
 				A7636E16218195B7002D7162 /* MyProjector.swift */,
@@ -174,6 +176,7 @@
 				A7636E142180597C002D7162 /* ProjectorsTableViewCell.swift */,
 				A7BA1FC1218C0D5000CA36C4 /* FindProjectorViewController.swift */,
 				A7BA1FC3218C1A9900CA36C4 /* ProjectorMapAnnotation.swift */,
+				A7BA1FC5218C5B7900CA36C4 /* AddLocationOnMapViewController.swift */,
 			);
 			path = PMPSystem;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				A7109A892176EEA000E3C029 /* AdminInfoTableViewController.swift in Sources */,
 				A7636E17218195B7002D7162 /* MyProjector.swift in Sources */,
 				A7109A81217467B100E3C029 /* InfoViewController.swift in Sources */,
+				A7BA1FC6218C5B7900CA36C4 /* AddLocationOnMapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

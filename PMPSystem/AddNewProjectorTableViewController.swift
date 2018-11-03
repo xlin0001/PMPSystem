@@ -10,7 +10,9 @@ import UIKit
 import Firebase
 import MapKit
 
-class AddNewProjectorTableViewController: UITableViewController,UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
+class AddNewProjectorTableViewController: UITableViewController,UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, AddALocationOnMapDelegate {
+
+    
     
     var currentLocation: CLLocationCoordinate2D?
     var locationLat: String?
@@ -74,6 +76,10 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
         return tempCandidates
     }()
     
+    private let sensorList: Array = {
+        return ["sensor1", "sensor2"]
+    }()
+    
     
     @IBOutlet weak var projectorImageView: UIImageView!
     @IBOutlet weak var projectorNameTextField: UITextField!
@@ -86,6 +92,7 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var projectorTypeTextField: UITextField!
     @IBOutlet weak var projectorAliasTextField: UITextField!
+    @IBOutlet weak var projectorAssociatedSensorTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -154,6 +161,13 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
         return picker
     }()
     
+    private var projectorSensorAssociatedPickerView: UIPickerView = {
+        var picker = UIPickerView()
+        picker.accessibilityIdentifier = "projectorSensorAssociatedPickerView"
+        picker.backgroundColor = .white
+        return picker
+    }()
+    
     private var pickerAccessoryBar: UIToolbar = {
         var toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -196,6 +210,11 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
         projectorTempPickerView.delegate = self
         operatingTempTextField.inputView = projectorTempPickerView
         operatingTempTextField.inputAccessoryView = pickerAccessoryBar
+        
+        projectorSensorAssociatedPickerView.dataSource = self
+        projectorSensorAssociatedPickerView.delegate = self
+        projectorAssociatedSensorTextField.inputView = projectorSensorAssociatedPickerView
+        projectorAssociatedSensorTextField.inputAccessoryView = pickerAccessoryBar
     }
     
     func handleMaxTemp(minTemp: Int){
@@ -212,6 +231,12 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
                 maxOpTemp.removeFirst()
             }
         }
+    }
+    
+    func addCoordinate(locCoord: CLLocationCoordinate2D) {
+        self.locationLat = String(locCoord.latitude)
+        self.locationLng = String(locCoord.longitude)
+        self.locationTextField.text = "Selected on Map"
     }
     
     @objc func dissmissKeyBoard(){
@@ -315,6 +340,8 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
             return 1
         } else if pickerView.accessibilityIdentifier == "projectorTempPickerView" {
             return 2
+        } else if pickerView.accessibilityIdentifier == "projectorSensorAssociatedPickerView"{
+            return 1
         }
         else {
             return 1
@@ -338,6 +365,8 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
             } else {
                 return maxOpTemp.count
             }
+        } else if pickerView.accessibilityIdentifier == "projectorSensorAssociatedPickerView" {
+            return sensorList.count
         }
         return 1
     }
@@ -359,6 +388,8 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
             } else {
                 return "\(String(maxOpTemp[row])) \(NSString(format:"%@", "\u{00B0}") as String)"
             }
+        } else if pickerView.accessibilityIdentifier == "projectorSensorAssociatedPickerView" {
+            return sensorList[row]
         }
         return "N/A"
     }
@@ -390,7 +421,8 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
             if minTemp != -20 && maxTemp != -20{
                 operatingTempTextField.text = "\(minTemp) - \(maxTemp)"
             }
-
+        } else if pickerView.accessibilityIdentifier == "projectorSensorAssociatedPickerView" {
+            projectorAssociatedSensorTextField.text = sensorList[row]
         }
     }
     
@@ -470,34 +502,42 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func handleLocationButton(_ sender: Any) {
-        if let currentLocation = currentLocation {
-            self.locationLat = String(currentLocation.latitude)
-            self.locationLng = String(currentLocation.longitude)
-            self.locationTextField.text = "Current Location"
-            //currentLatTextField.text = "\(currentLocation.latitude)"
-            //currentLongTextField.text = "\(currentLocation.longitude)"
-        } else {
-            // if the current address service is not available...
-            let alertController = UIAlertController(title: "Check your location settings", message: "There was an error in getting the current location, do you want to use Monash Caulfield Campus address?", preferredStyle: .alert)
-            // use monash address..
-            alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default,
-                                                    handler: { (action:UIAlertAction!) -> Void in
-                                                        //after user press ok, the following code will be execute
-                                                        self.locationTextField.text = "Monash Caulfield Campus"
-                                                        self.locationLat = "-37.8770"
-                                                        self.locationLng = "145.0443"
-                                                        
-                                                        
-            }))
-            alertController.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-            present(alertController, animated: true, completion: nil)
-        }
-    }
+//    @IBAction func handleLocationButton(_ sender: Any) {
+//        if let currentLocation = currentLocation {
+//            self.locationLat = String(currentLocation.latitude)
+//            self.locationLng = String(currentLocation.longitude)
+//            self.locationTextField.text = "Current Location"
+//            //currentLatTextField.text = "\(currentLocation.latitude)"
+//            //currentLongTextField.text = "\(currentLocation.longitude)"
+//        } else {
+//            // if the current address service is not available...
+//            let alertController = UIAlertController(title: "Check your location settings", message: "There was an error in getting the current location, do you want to use Monash Caulfield Campus address?", preferredStyle: .alert)
+//            // use monash address..
+//            alertController.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default,
+//                                                    handler: { (action:UIAlertAction!) -> Void in
+//                                                        //after user press ok, the following code will be execute
+//                                                        self.locationTextField.text = "Monash Caulfield Campus"
+//                                                        self.locationLat = "-37.8770"
+//                                                        self.locationLng = "145.0443"
+//
+//
+//            }))
+//            alertController.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+//            present(alertController, animated: true, completion: nil)
+//        }
+//    }
     
     // tells the delegate that the location has been updated
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let loc: CLLocation = locations.last!
         currentLocation = loc.coordinate
+    }
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SelectCoordOnMap"{
+            let nextController: AddLocationOnMapViewController = segue.destination as! AddLocationOnMapViewController
+            nextController.delegate = self
+        }
     }
 }
