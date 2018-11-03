@@ -35,6 +35,7 @@ class ReportTableViewController: UITableViewController {
         currentUserRef.observe(DataEventType.value, with: {(snapshot) in
             if snapshot.childrenCount > 0{
                 self.projectorsList.removeAll()
+                self.imageUrlList.removeAll()
                 for firebaseSensorData in snapshot.children.allObjects as! [DataSnapshot]{
                     let projectors = firebaseSensorData.value as! [String: AnyObject]
                     let alias = projectors["alias"] as! String
