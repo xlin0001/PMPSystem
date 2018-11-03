@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		01ECF91CF13D230E4B9775F2 /* Pods_PMPSystemTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF62DE49AE4EFEA96B0DF07A /* Pods_PMPSystemTests.framework */; };
+		0A2A3771218C0AE70022A655 /* ProjectorInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2A3770218C0AE70022A655 /* ProjectorInfoTableViewController.swift */; };
+		0A2A3775218C70150022A655 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2A3774218C70150022A655 /* Temp.swift */; };
+		0A2A3777218D40980022A655 /* DetailedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2A3776218D40980022A655 /* DetailedTableViewController.swift */; };
+		0A2A3779218D559C0022A655 /* TIpsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2A3778218D559C0022A655 /* TIpsViewController.swift */; };
+		0A2A377B218D59F80022A655 /* TipsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2A377A218D59F80022A655 /* TipsCollectionViewCell.swift */; };
+		0A2A377D218D6F540022A655 /* ReportTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2A377C218D6F540022A655 /* ReportTableViewController.swift */; };
+		0A2A377F218D6FA30022A655 /* ReportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2A377E218D6FA30022A655 /* ReportTableViewCell.swift */; };
 		0AEA20A8216ED3F5009214A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AEA20A7216ED3F5009214A5 /* Assets.xcassets */; };
 		0DF5F2D04BCB451B0B887942 /* Pods_PMPSystemUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E68E5DB340C5F4EF55EC2AC5 /* Pods_PMPSystemUITests.framework */; };
 		16A75500A0F238E2559573A7 /* Pods_PMPSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C8739B6EB68EEB82E9BBFFB /* Pods_PMPSystem.framework */; };
@@ -53,6 +60,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A2A3770218C0AE70022A655 /* ProjectorInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectorInfoTableViewController.swift; sourceTree = "<group>"; };
+		0A2A3774218C70150022A655 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
+		0A2A3776218D40980022A655 /* DetailedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTableViewController.swift; sourceTree = "<group>"; };
+		0A2A3778218D559C0022A655 /* TIpsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TIpsViewController.swift; sourceTree = "<group>"; };
+		0A2A377A218D59F80022A655 /* TipsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectionViewCell.swift; sourceTree = "<group>"; };
+		0A2A377C218D6F540022A655 /* ReportTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewController.swift; sourceTree = "<group>"; };
+		0A2A377E218D6FA30022A655 /* ReportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportTableViewCell.swift; sourceTree = "<group>"; };
 		0AEA20A7216ED3F5009214A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E63D1109ECEA691B724A5DE /* Pods-PMPSystemUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMPSystemUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PMPSystemUITests/Pods-PMPSystemUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2AB8084F4FD624BFE3DE527B /* Pods-PMPSystemTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMPSystemTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PMPSystemTests/Pods-PMPSystemTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,12 +174,19 @@
 				A7109A86217482D100E3C029 /* MyUser.swift */,
 				A7636E16218195B7002D7162 /* MyProjector.swift */,
 				A7109A4D216A0A7200E3C029 /* Main.storyboard */,
+				0A2A377C218D6F540022A655 /* ReportTableViewController.swift */,
+				0A2A377E218D6FA30022A655 /* ReportTableViewCell.swift */,
+				0A2A377A218D59F80022A655 /* TipsCollectionViewCell.swift */,
+				0A2A3778218D559C0022A655 /* TIpsViewController.swift */,
+				0A2A3776218D40980022A655 /* DetailedTableViewController.swift */,
 				A7109A58216A0A7700E3C029 /* Info.plist */,
 				A7CDB295217F2FCE00E60F73 /* Util.swift */,
 				A7636E0C2180395B002D7162 /* WelcomeCell.swift */,
 				A7109A50216A0A7200E3C029 /* PMPSystem.xcdatamodeld */,
 				A7109A55216A0A7700E3C029 /* LaunchScreen.storyboard */,
 				A7636E0E21803C16002D7162 /* ProjectorManagementTableViewController.swift */,
+				0A2A3770218C0AE70022A655 /* ProjectorInfoTableViewController.swift */,
+				0A2A3774218C70150022A655 /* Temp.swift */,
 				A7636E1021804895002D7162 /* ProjectorManagementCollectionViewCell.swift */,
 				A7636E142180597C002D7162 /* ProjectorsTableViewCell.swift */,
 			);
@@ -449,20 +470,27 @@
 			files = (
 				A7CDB296217F2FCF00E60F73 /* Util.swift in Sources */,
 				A7109A8521747F6000E3C029 /* InfoTableViewController.swift in Sources */,
+				0A2A3779218D559C0022A655 /* TIpsViewController.swift in Sources */,
 				A7636E0F21803C16002D7162 /* ProjectorManagementTableViewController.swift in Sources */,
+				0A2A377B218D59F80022A655 /* TipsCollectionViewCell.swift in Sources */,
 				A7109A8321746F4E00E3C029 /* ItemOneViewController.swift in Sources */,
 				A7109A7B216A18B200E3C029 /* LoginViewController.swift in Sources */,
+				0A2A377F218D6FA30022A655 /* ReportTableViewCell.swift in Sources */,
 				A7109A4C216A0A7200E3C029 /* ViewController.swift in Sources */,
 				A7636E1121804895002D7162 /* ProjectorManagementCollectionViewCell.swift in Sources */,
+				0A2A3771218C0AE70022A655 /* ProjectorInfoTableViewController.swift in Sources */,
 				A7109A87217482D100E3C029 /* MyUser.swift in Sources */,
 				A7109A8B2179C9C000E3C029 /* AddNewProjectorTableViewController.swift in Sources */,
 				A7636E152180597C002D7162 /* ProjectorsTableViewCell.swift in Sources */,
+				0A2A3775218C70150022A655 /* Temp.swift in Sources */,
 				A7636E0D2180395B002D7162 /* WelcomeCell.swift in Sources */,
 				A7109A4A216A0A7200E3C029 /* AppDelegate.swift in Sources */,
 				A7109A52216A0A7200E3C029 /* PMPSystem.xcdatamodeld in Sources */,
 				A7109A892176EEA000E3C029 /* AdminInfoTableViewController.swift in Sources */,
+				0A2A3777218D40980022A655 /* DetailedTableViewController.swift in Sources */,
 				A7636E17218195B7002D7162 /* MyProjector.swift in Sources */,
 				A7109A81217467B100E3C029 /* InfoViewController.swift in Sources */,
+				0A2A377D218D6F540022A655 /* ReportTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
