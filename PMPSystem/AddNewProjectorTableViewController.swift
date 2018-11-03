@@ -80,6 +80,10 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
         return ["sensor1", "sensor2"]
     }()
     
+    private let ledState: Array = {
+        return ["off", "on"]
+    }()
+    
     
     @IBOutlet weak var projectorImageView: UIImageView!
     @IBOutlet weak var projectorNameTextField: UITextField!
@@ -274,7 +278,7 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
         let maxTempInTF = String((temps[1])).trimmingCharacters(in: .whitespacesAndNewlines)
         
         
-        let values = ["alias": alias, "brand": brand, "type": type, "date": date, "location": location, "lampType": lampType, "maxLux": maxLux, "minTemp": minTempInTF, "maxTemp": maxTempInTF, "power": power, "latitude": locationLat, "longitude": locationLng, "sensor": sensor]
+        let values = ["alias": alias, "brand": brand, "type": type, "date": date, "location": location, "lampType": lampType, "maxLux": maxLux, "minTemp": minTempInTF, "maxTemp": maxTempInTF, "power": power, "latitude": locationLat, "longitude": locationLng, "sensor": sensor, "ledState": ledState[0]]
         handleImageUpload(values: values as [String : AnyObject])
         //handleNewProjector(values as [String : AnyObject])
         
