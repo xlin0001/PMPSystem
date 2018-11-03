@@ -86,8 +86,9 @@ class ProjectorInfoTableViewController: UITableViewController {
         })
         
     }
-    
+    //TO DO
     override func tableView(_ tableView: UITableView,accessoryButtonTappedForRowWith indexPath: IndexPath){
+        if indexPath.section == 1{
         let mianStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let destination = mianStoryboard.instantiateViewController(withIdentifier: "DetailedTableViewController") as! DetailedTableViewController
         destination.brand = self.brand
@@ -98,6 +99,7 @@ class ProjectorInfoTableViewController: UITableViewController {
         destination.proLux = self.proLux
         destination.proType = self.proType
         self.navigationController?.pushViewController(destination, animated: true)
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
