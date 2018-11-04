@@ -31,6 +31,7 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         return button
     }()
     
+    // the email text field
     let emailTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Email"
@@ -40,6 +41,7 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
        return textField
     }()
     
+    // the name separator view (just a speartor line)
     let nameSeparatorView: UIView = {
         let separator = UIView()
         separator.backgroundColor = UIColor(red: 200, green: 200, blue: 200)
@@ -47,21 +49,26 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         return separator
     }()
     
+    // this is the text field
     let passwordTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Password"
         textField.isSecureTextEntry = true
+        // A Boolean value that determines whether the view’s autoresizing mask is translated into Auto Layout constraints.
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
+    // just a line between two text field.
     let passwordSeparatorView: UIView = {
         let separator = UIView()
         separator.backgroundColor = UIColor(red: 200, green: 200, blue: 200)
+        // A Boolean value that determines whether the view’s autoresizing mask is translated into Auto Layout constraints.
         separator.translatesAutoresizingMaskIntoConstraints = false
         return separator
     }()
     
+    // the second password text field
     let passwordAgainTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Re-enter Password"
@@ -70,6 +77,7 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         return textField
     }()
     
+    // the use info identity image view
     lazy var identityImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "identity")
@@ -85,12 +93,14 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         return imageView
     }()
     
+    // the segemented control of the login or register
     lazy var loginRegisterSegmentedControl: UISegmentedControl = {
         let segmentedControl =  UISegmentedControl(items: ["Login", "Register"])
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         segmentedControl.tintColor = UIColor.white
         segmentedControl.selectedSegmentIndex = 1
         
+        // Associates a target object and action method with segmented control.
         segmentedControl.addTarget(self, action: #selector(handleLoginRegisterSegmentedControlValueChanged), for: .valueChanged)
         
         return segmentedControl
@@ -165,10 +175,12 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @objc func handleLogin(){
+        // Signs in using an email address and password.
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (authResult, error) in
             if error != nil{
                 let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Sure", style: .default, handler: nil))
+                // Presents alert view controller modally.
                 self.present(alert, animated: true)
                 return
             }
@@ -178,6 +190,7 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     
     @objc func handleLoginRegisterSegmentedControlValueChanged(){
+        // the title of the specified segment.
         let title = loginRegisterSegmentedControl.titleForSegment(at: loginRegisterSegmentedControl.selectedSegmentIndex)
         loginRegisterButton.setTitle(title, for: .normal)
         
@@ -199,8 +212,7 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         //change height of the passwordAgainTextView
         passwordAgainHeightAnchor?.isActive = false
         passwordAgainHeightAnchor = passwordAgainTextField.heightAnchor.constraint(equalTo: inputsContainerView.heightAnchor, multiplier: loginRegisterSegmentedControl.selectedSegmentIndex == 0 ? 0 : 1/3)
-        
-        
+
         emailHeightAnchor?.isActive = true
         passwordHeightAnchor?.isActive = true
         passwordAgainHeightAnchor?.isActive = true
@@ -425,6 +437,7 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let alertController = UIAlertController(title: "There was an error in getting the photo", message: "Error", preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
+        // Dismisses the view controller that was presented modally by the view controller.
         dismiss(animated: true, completion: nil)
     }
     
