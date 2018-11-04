@@ -13,6 +13,7 @@ class ReportTableViewController: UITableViewController {
     var projectorsList: [MyProjector] = []
     var imageUrlList:[String] = []
     var keyValue:String?
+    var sensorNo:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
@@ -77,6 +78,7 @@ class ReportTableViewController: UITableViewController {
                 for firebaseSensorData in snapshot.children.allObjects as! [DataSnapshot]{
                     let projectors = firebaseSensorData.value as! [String: AnyObject]
                     let nameAlias = projectors["alias"] as! String
+                    self.sensorNo = (projectors["sensor"] as! String)
                     if pName == nameAlias  {
                        
                         self.keyValue = firebaseSensorData.key as String
@@ -86,7 +88,9 @@ class ReportTableViewController: UITableViewController {
                 let currentProRef = refHandle.child("users").child(userUID).child("projectors").child(self.keyValue!)
                 let updateValues = ["ledState":"on"]
                 currentProRef.updateChildValues(updateValues)
-                print(1)
+                let updateRef = refHandle.child("sensors").child(self.sensorNo!)
+                updateRef.updateChildValues(updateValues)
+                
             }
         })
         
@@ -113,7 +117,9 @@ class ReportTableViewController: UITableViewController {
                 let currentProRef2 = refHandle2.child("users").child(userUID).child("projectors").child(self.keyValue!)
                 let updateValues = ["ledState":"off"]
                 currentProRef2.updateChildValues(updateValues)
-                print(2)
+                let updateRef = refHandle2.child("sensors").child(self.sensorNo!)
+                updateRef.updateChildValues(updateValues)
+                
             }
         })
         
