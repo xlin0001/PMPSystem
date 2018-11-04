@@ -1,26 +1,23 @@
 //
-//  ReportTableViewController.swift
+//  WarningTableViewController.swift
 //  PMPSystem
 //
-//  Created by 沈宇帆 on 2018/11/3.
+//  Created by 沈宇帆 on 2018/11/4.
 //  Copyright © 2018年 Monash University. All rights reserved.
 //
 
 import UIKit
 import Firebase
 import FirebaseDatabase
-class ReportTableViewController: UITableViewController {
+
+class WarningTableViewController: UITableViewController {
     var projectorsList: [MyProjector] = []
     var imageUrlList:[String] = []
-    var stateList:[String] = []
-    var keyValue:String?
-    var sensorNo:String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.tableFooterView = UIView()
-        navigationItem.leftBarButtonItem?.tintColor = .white
-        navigationController?.navigationBar.tintColor = .white
         handleProjectors()
+        tableView.tableFooterView = UIView()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -39,7 +36,6 @@ class ReportTableViewController: UITableViewController {
             if snapshot.childrenCount > 0{
                 self.projectorsList.removeAll()
                 self.imageUrlList.removeAll()
-                self.stateList.removeAll()
                 for firebaseSensorData in snapshot.children.allObjects as! [DataSnapshot]{
                     let projectors = firebaseSensorData.value as! [String: AnyObject]
                     let alias = projectors["alias"] as! String
@@ -48,7 +44,6 @@ class ReportTableViewController: UITableViewController {
                     let lampType = projectors["lampType"] as! String
                     let location = projectors["location"] as! String
                     let state = projectors["ledState"] as! String
-                    self.stateList.append(state)
                     let maxLux = projectors["maxLux"] as! String
                     let doubleMaxLux = Double(maxLux)
                     let maxTemp = projectors["maxTemp"] as! String
@@ -57,12 +52,13 @@ class ReportTableViewController: UITableViewController {
                     let doubleMinTemp = Double(minTemp)
                     let type = projectors["type"] as! String
                     let profileImageURL = projectors["projectorProfileImageURL"] as? String ?? ""
-                    self.imageUrlList.append(profileImageURL)
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "dd MM YYYY"
                     let formatedDate = dateFormatter.date(from: date)
+                    if (state == "on"){
                     self.projectorsList.append(MyProjector(alias: alias, brand: brand, date: formatedDate!, lampType: lampType, location: location, maxLux: doubleMaxLux!, maxTemp: doubleMaxTemp!, minTemp: doubleMinTemp!, power: 0, type: type))
-                    
+                    self.imageUrlList.append(profileImageURL)
+                    }
                 }
                 self.tableView.reloadData()
             }
@@ -70,67 +66,6 @@ class ReportTableViewController: UITableViewController {
     }
     // MARK: - Table view data source
 
-    func getKeyVlalue(pName:String){
-        guard var userUID = Auth.auth().currentUser?.uid else {
-            return
-        }
-        let refHandle = Database.database().reference(fromURL: "https://pmpsystem-f537e.firebaseio.com/")
-        userUID = (Auth.auth().currentUser?.uid)!
-        let currentUserRef = refHandle.child("users").child(userUID).child("projectors")
-        currentUserRef.observeSingleEvent(of:.value, with: {(snapshot) in
-            if snapshot.childrenCount > 0{
-                for firebaseSensorData in snapshot.children.allObjects as! [DataSnapshot]{
-                    let projectors = firebaseSensorData.value as! [String: AnyObject]
-                    let nameAlias = projectors["alias"] as! String
-                    self.sensorNo = (projectors["sensor"] as! String)
-                    if pName == nameAlias  {
-                       
-                        self.keyValue = firebaseSensorData.key as String
-                    }
-                    
-                }
-                let currentProRef = refHandle.child("users").child(userUID).child("projectors").child(self.keyValue!)
-                let updateValues = ["ledState":"on"]
-                currentProRef.updateChildValues(updateValues)
-                let updateRef = refHandle.child("sensors").child(self.sensorNo!)
-                updateRef.updateChildValues(updateValues)
-                
-            }
-        })
-        
-    }
-    
-    func offTheLight(pName:String){
-        guard var userUID = Auth.auth().currentUser?.uid else {
-            return
-        }
-        let refHandle2 = Database.database().reference(fromURL: "https://pmpsystem-f537e.firebaseio.com/")
-        userUID = (Auth.auth().currentUser?.uid)!
-        let currentUserRef1 = refHandle2.child("users").child(userUID).child("projectors")
-        currentUserRef1.observeSingleEvent(of:.value, with: {(snapshot) in
-            if snapshot.childrenCount > 0{
-                for firebaseSensorData in snapshot.children.allObjects as! [DataSnapshot]{
-                    let projectors = firebaseSensorData.value as! [String: AnyObject]
-                    let nameAlias = projectors["alias"] as! String
-                    self.sensorNo = (projectors["sensor"] as! String)
-                    if pName == nameAlias  {
-                        
-                        self.keyValue = firebaseSensorData.key as String
-                    }
-                    
-                }
-                let currentProRef2 = refHandle2.child("users").child(userUID).child("projectors").child(self.keyValue!)
-                let updateValues = ["ledState":"off"]
-                currentProRef2.updateChildValues(updateValues)
-                let updateRef = refHandle2.child("sensors").child(self.sensorNo!)
-                updateRef.updateChildValues(updateValues)
-                
-            }
-        })
-        
-    }
-    
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -143,9 +78,8 @@ class ReportTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReportCell", for: indexPath) as! ReportTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "warningCell", for: indexPath) as! WarningTableViewCell
         // Configure the cell...
-        cell.nameLabel.text = projectorsList[indexPath.row].alias
         let urlString = self.imageUrlList[indexPath.row]
         let url = URL(string: urlString)
         
@@ -157,31 +91,16 @@ class ReportTableViewController: UITableViewController {
             }
             // if there is no error happens...
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // in half a second...
-                cell.projectorImg.image = UIImage(data: data!)
+                cell.imgView.image = UIImage(data: data!)
             }
         }).resume()
-        cell.switchBtn.tag = indexPath.row
-        cell.switchBtn.addTarget(self, action: #selector(self.switchChanged(_:)), for: .valueChanged)
-        if (stateList[indexPath.row] == "on"){
-            cell.switchBtn.setOn(true, animated: true)
-        }else{
-            cell.switchBtn.setOn(false, animated: true)
-        }
+        cell.nameLabel.text = projectorsList[indexPath.row].alias
         return cell
     }
- 
-    @objc func switchChanged(_ sender : UISwitch!){
-        if sender.isOn{
-            getKeyVlalue(pName: projectorsList[sender.tag].alias!)
-            print("on")
-        }
-        else{
-            offTheLight(pName: projectorsList[sender.tag].alias!)
-            print("off")
-        }
-        
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 55
     }
-
 
     /*
     // Override to support conditional editing of the table view.
