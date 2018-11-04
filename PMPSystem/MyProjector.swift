@@ -20,6 +20,7 @@ class MyProjector: NSObject {
     var type: String?
     var longitude: Double?
     var latitude: Double?
+    var sensor: String?
     
     init(alias: String, brand: String, date: Date, lampType: String, location: String, maxLux: Double, maxTemp: Double, minTemp: Double, power: Double, type: String, longitude: Double, latitude: Double) {
         self.alias = alias
@@ -48,6 +49,23 @@ class MyProjector: NSObject {
         self.power = power
         self.type = type
     }
+    
+    init(alias: String, brand: String, date: Date, lampType: String, location: String, maxLux: Double, maxTemp: Double, minTemp: Double, power: Double, type: String, longitude: Double, latitude: Double, sensor: String) {
+        self.alias = alias
+        self.brand = brand
+        self.date = date
+        self.lampType = lampType
+        self.location = location
+        self.maxLux = maxLux
+        self.maxTemp = maxTemp
+        self.minTemp = minTemp
+        self.power = power
+        self.type = type
+        self.longitude = longitude
+        self.latitude = latitude
+        self.sensor = sensor
+    }
+    
     
     override init(){}
 }

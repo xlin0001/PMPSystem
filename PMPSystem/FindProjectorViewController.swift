@@ -16,11 +16,16 @@ class FindProjectorViewController: UIViewController, MKMapViewDelegate {
     var projectorsList: [MyProjector] = []
     var imageURLList: [String] = []
     var projectorMapAnnotation: [ProjectorMapAnnotation] = []
+    var voiceDatas: [VoiceData] = []
+    var pairedProjectors: [MyProjector] = []
+    var oneMinSensorDatas: [VoiceData] = []
 
     override func viewDidLoad() {
         projectorMapView.delegate = self
         super.viewDidLoad()
         handleProjectors()
+        addADoneButton()
+        observeInUseStatusChange()
         
     }
     
@@ -51,6 +56,7 @@ class FindProjectorViewController: UIViewController, MKMapViewDelegate {
                     let type = projectors["type"] as! String
                     let latitudeString = projectors["latitude"] as! String
                     let longitudeString = projectors["longitude"] as! String
+                    let sensor = projectors["sensor"] as! String
                     
                     let latitude = Double(latitudeString)
                     let longitude = Double(longitudeString)
@@ -63,7 +69,7 @@ class FindProjectorViewController: UIViewController, MKMapViewDelegate {
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "dd MM YYYY"
                     let formatedDate = dateFormatter.date(from: date)
-                    self.projectorsList.append(MyProjector(alias: alias, brand: brand, date: formatedDate!, lampType: lampType, location: location, maxLux: doubleMaxLux!, maxTemp: doubleMaxTemp!, minTemp: doubleMinTemp!, power: 0, type: type, longitude: longitude!, latitude: latitude!))
+                    self.projectorsList.append(MyProjector(alias: alias, brand: brand, date: formatedDate!, lampType: lampType, location: location, maxLux: doubleMaxLux!, maxTemp: doubleMaxTemp!, minTemp: doubleMinTemp!, power: 0, type: type, longitude: longitude!, latitude: latitude!, sensor: sensor))
                     
                 }
                 self.addAnnotationsToList()
@@ -81,7 +87,7 @@ class FindProjectorViewController: UIViewController, MKMapViewDelegate {
             return
         }
         for projector in projectorsList {
-            let location = ProjectorMapAnnotation(title: projector.alias!, subtitle: projector.brand!, lat: projector.latitude!, long: projector.longitude!, image: UIImage(named: "projector")!)
+            let location = ProjectorMapAnnotation(title: projector.alias!, subtitle: projector.brand!, lat: projector.latitude!, long: projector.longitude!, image: UIImage(named: "lamp_black")!)
             projectorMapAnnotation.append(location)
         }
     }
@@ -121,12 +127,103 @@ class FindProjectorViewController: UIViewController, MKMapViewDelegate {
         let projectorAnnotation = annotation as! ProjectorMapAnnotation
         
         // set image on the annotation
-        anntationView.image = Util.resizeImage(image: projectorAnnotation.image!, targetSize: CGSize(width: 20, height: 20))
+        anntationView.image = Util.resizeImage(image: projectorAnnotation.image!, targetSize: CGSize(width: 30, height: 30))
         
         anntationView.leftCalloutAccessoryView = UIImageView(image: Util.resizeImage(image: projectorAnnotation.image!, targetSize: CGSize(width: 20, height: 20)))
         anntationView.rightCalloutAccessoryView = UIButton(type: .infoDark)
         anntationView.canShowCallout = true
         return anntationView
+    }
+    
+    @objc func test(){
+        
+        projectorMapView.removeAnnotations(projectorMapAnnotation)
+    }
+    
+    func addADoneButton(){
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "test", style: .done, target: self, action: #selector(test))
+    }
+    
+    func observeInUseStatusChange(){
+        //retrieve the data from firebase
+        let refHandle = Database.database().reference(fromURL: "https://pmpsystem-f537e.firebaseio.com/")
+        let voiceRef = refHandle.child("sensors").child("sensor1").child("voice")
+        self.voiceDatas.removeAll()
+        voiceRef.observe(.value) { (snapshot) in
+            // get the number of the children
+            print("childrenCount: \(snapshot.childrenCount)")
+            if snapshot.childrenCount > 0 {
+                self.voiceDatas.removeAll()
+                for firebaseVoiceData in snapshot.children.allObjects as! [DataSnapshot] {
+                    let pair = firebaseVoiceData.value as! [String: AnyObject]
+                    let id = pair["date"] as! Int
+                    let voice = pair["voice"] as! Int
+                    self.voiceDatas.append(VoiceData(dateAndTime: id, voice: voice))
+                }
+            }
+            
+            // empty all observed values.
+            self.pairedProjectors.removeAll()
+            self.oneMinSensorDatas.removeAll()
+            
+            
+            if self.voiceDatas.count >= 10 {
+                for i in 0..<10 {
+                    self.oneMinSensorDatas.append(self.voiceDatas[self.voiceDatas.count-i-1])
+                    print(Util.convertUnixTimeToDate(timeIntervalSince1970: self.voiceDatas[i].dateAndTime))
+                    print(self.voiceDatas[i].voice)
+                }
+            }
+            
+            for projector in self.projectorsList {
+                if projector.sensor == "sensor1" {
+                    self.pairedProjectors.append(projector)
+                }
+            }
+            print("pairedProjectors: \(self.pairedProjectors.count)")
+            
+            var inUseDataCount = 0
+            for oneMinSensorData in self.oneMinSensorDatas {
+                if oneMinSensorData.voice > 15{
+                    inUseDataCount += 1
+                }
+            }
+            
+            // the projector(s) is use
+            if inUseDataCount > 0 {
+                for annotation in self.projectorMapAnnotation{
+                    for pairedProjector in self.pairedProjectors{
+                        if annotation.title == pairedProjector.alias {
+                            print("yes, find one!")
+                            self.projectorMapView.removeAnnotation(annotation)
+                            annotation.image = UIImage(named: "lamp_colour")
+                            self.projectorMapView.addAnnotation(annotation)
+                        }
+                    }
+                }
+            }
+            
+            // the projector(s) is not use
+            if inUseDataCount == 0 {
+                for annotation in self.projectorMapAnnotation{
+                    for pairedProjector in self.pairedProjectors{
+                        if annotation.title == pairedProjector.alias {
+                            print("yes, find one!")
+                            self.projectorMapView.removeAnnotation(annotation)
+                            annotation.image = UIImage(named: "lamp_black")
+                            self.projectorMapView.addAnnotation(annotation)
+                        }
+                    }
+                }
+            }
+
+            self.projectorMapView.reloadInputViews()
+        }
+        
+        
+        
+        
+
     }
     
 }
