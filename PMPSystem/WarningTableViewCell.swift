@@ -1,20 +1,17 @@
 //
-//  ReportTableViewCell.swift
+//  WarningTableViewCell.swift
 //  PMPSystem
 //
-//  Created by 沈宇帆 on 2018/11/3.
+//  Created by 沈宇帆 on 2018/11/4.
 //  Copyright © 2018年 Monash University. All rights reserved.
 //
 
 import UIKit
 
-class ReportTableViewCell: UITableViewCell {
-   
-    @IBOutlet weak var projectorImg: UIImageView!
+class WarningTableViewCell: UITableViewCell {
+
+    @IBOutlet weak var imgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var switchBtn: UISwitch!
-
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
