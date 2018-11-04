@@ -12,6 +12,7 @@ import FirebaseDatabase
 class ReportTableViewController: UITableViewController {
     var projectorsList: [MyProjector] = []
     var imageUrlList:[String] = []
+    var keyValue:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
@@ -64,6 +65,61 @@ class ReportTableViewController: UITableViewController {
     }
     // MARK: - Table view data source
 
+    func getKeyVlalue(pName:String){
+        guard var userUID = Auth.auth().currentUser?.uid else {
+            return
+        }
+        let refHandle = Database.database().reference(fromURL: "https://pmpsystem-f537e.firebaseio.com/")
+        userUID = (Auth.auth().currentUser?.uid)!
+        let currentUserRef = refHandle.child("users").child(userUID).child("projectors")
+        currentUserRef.observeSingleEvent(of:.value, with: {(snapshot) in
+            if snapshot.childrenCount > 0{
+                for firebaseSensorData in snapshot.children.allObjects as! [DataSnapshot]{
+                    let projectors = firebaseSensorData.value as! [String: AnyObject]
+                    let nameAlias = projectors["alias"] as! String
+                    if pName == nameAlias  {
+                       
+                        self.keyValue = firebaseSensorData.key as String
+                    }
+                    
+                }
+                let currentProRef = refHandle.child("users").child(userUID).child("projectors").child(self.keyValue!)
+                let updateValues = ["ledState":"on"]
+                currentProRef.updateChildValues(updateValues)
+                print(1)
+            }
+        })
+        
+    }
+    
+    func offTheLight(pName:String){
+        guard var userUID = Auth.auth().currentUser?.uid else {
+            return
+        }
+        let refHandle2 = Database.database().reference(fromURL: "https://pmpsystem-f537e.firebaseio.com/")
+        userUID = (Auth.auth().currentUser?.uid)!
+        let currentUserRef1 = refHandle2.child("users").child(userUID).child("projectors")
+        currentUserRef1.observeSingleEvent(of:.value, with: {(snapshot) in
+            if snapshot.childrenCount > 0{
+                for firebaseSensorData in snapshot.children.allObjects as! [DataSnapshot]{
+                    let projectors = firebaseSensorData.value as! [String: AnyObject]
+                    let nameAlias = projectors["alias"] as! String
+                    if pName == nameAlias  {
+                        
+                        self.keyValue = firebaseSensorData.key as String
+                    }
+                    
+                }
+                let currentProRef2 = refHandle2.child("users").child(userUID).child("projectors").child(self.keyValue!)
+                let updateValues = ["ledState":"off"]
+                currentProRef2.updateChildValues(updateValues)
+                print(2)
+            }
+        })
+        
+    }
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -93,9 +149,24 @@ class ReportTableViewController: UITableViewController {
                 cell.projectorImg.image = UIImage(data: data!)
             }
         }).resume()
+        cell.switchBtn.tag = indexPath.row
+        cell.switchBtn.addTarget(self, action: #selector(self.switchChanged(_:)), for: .valueChanged)
+        
         return cell
     }
  
+    @objc func switchChanged(_ sender : UISwitch!){
+        if sender.isOn{
+            getKeyVlalue(pName: projectorsList[sender.tag].alias!)
+            print("on")
+        }
+        else{
+            offTheLight(pName: projectorsList[sender.tag].alias!)
+            print("off")
+        }
+        
+    }
+
 
     /*
     // Override to support conditional editing of the table view.

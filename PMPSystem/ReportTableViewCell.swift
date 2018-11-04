@@ -9,10 +9,12 @@
 import UIKit
 
 class ReportTableViewCell: UITableViewCell {
+   
     @IBOutlet weak var projectorImg: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var switchBtn: UISwitch!
-    
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
