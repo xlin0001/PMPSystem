@@ -29,6 +29,9 @@ class TIpsViewController: UIViewController,UICollectionViewDelegate,UICollection
         cell.tipsNoLabel.text = tips[indexPath.row]
         cell.tipsContent.text = contents[indexPath.row]
         cell.tipsImg.image = imgs[indexPath.row]
+        //cell.backgroundView = UIImageView(image: UIImage(named: "abstract"))
+        cell.layer.cornerRadius = 20
+        cell.layer.masksToBounds = true
         cell.backgroundColor = UIColor(red: 255, green: 255, blue: 224)
         return cell
     }

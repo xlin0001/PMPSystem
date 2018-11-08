@@ -71,4 +71,35 @@ class Util: NSObject{
         return str
     }
     
+    // this class function convers raspio Unix raw time formate to human readable time...
+    class func convertUnixTimeToDate(timeIntervalSince1970: Int) -> String{
+        let timeIntervalSince1970String = String(timeIntervalSince1970)
+        
+        let timeIntervalSince1970String10Digits = timeIntervalSince1970String.prefix(10)
+        
+        let timeIntervalSince1970Double = Double(timeIntervalSince1970String10Digits)
+        
+        let date = Date(timeIntervalSince1970: timeIntervalSince1970Double!)
+        let dateFormatter = DateFormatter()
+        //dateFormatter.timeZone = TimeZone(abbreviation: "GMT") //Set timezone that you want
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm" //Specify your format that you want
+        
+        let timeInterval = NSDate().timeIntervalSince1970
+        let time = timeInterval.description
+        
+        return dateFormatter.string(from: date)
+    }
+    
+    class func compareTemperatureDifference(mapTemp: Double, currentTemp: Double) -> Double {
+        return abs(mapTemp - currentTemp)
+    }
+    
+    class func compareColourTemperatureDifference(originalColourTemp: Double, currentColourTemp: Double) -> Double {
+        return abs(originalColourTemp - currentColourTemp)
+    }
+    
+    class func campareBrightnessDifference(designedBrightness: Double, currentBrightness: Double) -> Double {
+        return abs(designedBrightness - currentBrightness)
+    }
 }

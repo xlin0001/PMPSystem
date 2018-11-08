@@ -44,7 +44,9 @@
 		A7BA1FC2218C0D5000CA36C4 /* FindProjectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA1FC1218C0D5000CA36C4 /* FindProjectorViewController.swift */; };
 		A7BA1FC4218C1A9900CA36C4 /* ProjectorMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA1FC3218C1A9900CA36C4 /* ProjectorMapAnnotation.swift */; };
 		A7BA1FC6218C5B7900CA36C4 /* AddLocationOnMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA1FC5218C5B7900CA36C4 /* AddLocationOnMapViewController.swift */; };
+		A7BA1FC8218EB59500CA36C4 /* VoiceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA1FC7218EB59500CA36C4 /* VoiceData.swift */; };
 		A7CDB296217F2FCF00E60F73 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CDB295217F2FCE00E60F73 /* Util.swift */; };
+		A7D01FBD218EDE590044EBB5 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D01FBC218EDE590044EBB5 /* AboutUsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,7 +113,9 @@
 		A7BA1FC1218C0D5000CA36C4 /* FindProjectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindProjectorViewController.swift; sourceTree = "<group>"; };
 		A7BA1FC3218C1A9900CA36C4 /* ProjectorMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectorMapAnnotation.swift; sourceTree = "<group>"; };
 		A7BA1FC5218C5B7900CA36C4 /* AddLocationOnMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationOnMapViewController.swift; sourceTree = "<group>"; };
+		A7BA1FC7218EB59500CA36C4 /* VoiceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceData.swift; sourceTree = "<group>"; };
 		A7CDB295217F2FCE00E60F73 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		A7D01FBC218EDE590044EBB5 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		CE20F64F4AF65EE6C608AE4A /* Pods-PMPSystemUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PMPSystemUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PMPSystemUITests/Pods-PMPSystemUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E68E5DB340C5F4EF55EC2AC5 /* Pods_PMPSystemUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PMPSystemUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF62DE49AE4EFEA96B0DF07A /* Pods_PMPSystemTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PMPSystemTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +188,7 @@
 				A7109A86217482D100E3C029 /* MyUser.swift */,
 				A7636E16218195B7002D7162 /* MyProjector.swift */,
 				A7109A4D216A0A7200E3C029 /* Main.storyboard */,
+				A7D01FBC218EDE590044EBB5 /* AboutUsViewController.swift */,
 				0A2A3782218ED11C0022A655 /* WarningTableViewCell.swift */,
 				0A2A377C218D6F540022A655 /* ReportTableViewController.swift */,
 				0A2A3780218ECFCC0022A655 /* WarningTableViewController.swift */,
@@ -199,6 +204,7 @@
 				A7636E0E21803C16002D7162 /* ProjectorManagementTableViewController.swift */,
 				0A2A3770218C0AE70022A655 /* ProjectorInfoTableViewController.swift */,
 				0A2A3774218C70150022A655 /* Temp.swift */,
+				A7BA1FC7218EB59500CA36C4 /* VoiceData.swift */,
 				A7636E1021804895002D7162 /* ProjectorManagementCollectionViewCell.swift */,
 				A7636E142180597C002D7162 /* ProjectorsTableViewCell.swift */,
 				A7BA1FC3218C1A9900CA36C4 /* ProjectorMapAnnotation.swift */,
@@ -489,9 +495,11 @@
 				A7636E0F21803C16002D7162 /* ProjectorManagementTableViewController.swift in Sources */,
 				0A2A377B218D59F80022A655 /* TipsCollectionViewCell.swift in Sources */,
 				A7109A8321746F4E00E3C029 /* ItemOneViewController.swift in Sources */,
+				A7BA1FC8218EB59500CA36C4 /* VoiceData.swift in Sources */,
 				A7109A7B216A18B200E3C029 /* LoginViewController.swift in Sources */,
 				A7BA1FC2218C0D5000CA36C4 /* FindProjectorViewController.swift in Sources */,
 				0A2A377F218D6FA30022A655 /* ReportTableViewCell.swift in Sources */,
+				A7D01FBD218EDE590044EBB5 /* AboutUsViewController.swift in Sources */,
 				A7109A4C216A0A7200E3C029 /* ViewController.swift in Sources */,
 				A7636E1121804895002D7162 /* ProjectorManagementCollectionViewCell.swift in Sources */,
 				0A2A3771218C0AE70022A655 /* ProjectorInfoTableViewController.swift in Sources */,

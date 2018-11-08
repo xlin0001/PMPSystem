@@ -28,6 +28,11 @@ class ProjectorInfoTableViewController: UITableViewController {
     var minTemp:Double?
     var proLux:Double?
     var temps:[Temp] = []
+    
+    var lastTested: Int?
+    var lastTemp: Double?
+    var lastBrightness: Double?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
@@ -73,6 +78,9 @@ class ProjectorInfoTableViewController: UITableViewController {
                     let blue = raspio["blue"] as! Double
                     let green = raspio["green"] as! Double
                     let temp = raspio["temp"] as! Double
+                    self.lastTested = id
+                    //self.lastBrightness = raspio["maxLux"] as! Double
+                    
                     // have to make sure that this object is not nil
                     self.temps.append(Temp(id: id, red: red, blue: blue, green: green, temp: temp))
                 }
@@ -80,6 +88,11 @@ class ProjectorInfoTableViewController: UITableViewController {
                     
                 }
             self.crtTemp.text = "Current Temperature: \((self.temps.last?.temp)!)"
+            self.lastTemp = (self.temps.last?.temp)!
+            self.lastBrightness = Util.calcutateIlluminance(red: (self.temps.last?.red)!, green: (self.temps.last?.green)!, blue: (self.temps.last?.blue)!)
+            
+            
+            
             self.crtCtemp.text = "Current Color Temperature: \(Util.calcuateColourTemperature(red: (self.temps.last?.red)!, green: (self.temps.last?.green)!, blue: (self.temps.last?.blue)!))"
             self.crtLux.text = "Current Lux: \(Util.calcutateIlluminance(red: (self.temps.last?.red)!, green: (self.temps.last?.green)!, blue: (self.temps.last?.blue)!))"
             
@@ -88,17 +101,39 @@ class ProjectorInfoTableViewController: UITableViewController {
     }
     //TO DO
     override func tableView(_ tableView: UITableView,accessoryButtonTappedForRowWith indexPath: IndexPath){
-        if indexPath.section == 1{
-        let mianStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let destination = mianStoryboard.instantiateViewController(withIdentifier: "DetailedTableViewController") as! DetailedTableViewController
-        destination.brand = self.brand
-        destination.light = self.light
-        destination.maxTemp = self.maxTemp
-        destination.minTemp = self.minTemp
-        destination.name = self.name
-        destination.proLux = self.proLux
-        destination.proType = self.proType
-        self.navigationController?.pushViewController(destination, animated: true)
+        if indexPath.section == 1 {
+            let mianStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let destination = mianStoryboard.instantiateViewController(withIdentifier: "DetailedTableViewController") as! DetailedTableViewController
+            destination.brand = self.brand
+            destination.light = self.light
+            destination.maxTemp = self.maxTemp
+            destination.minTemp = self.minTemp
+            destination.name = self.name
+            destination.proLux = self.proLux
+            destination.proType = self.proType
+            self.navigationController?.pushViewController(destination, animated: true)
+        }
+        // projector management section tapped
+        if indexPath.section == 2 {
+            print("projector management section tapped")
+            // temperuature
+            if indexPath.row == 0 {
+//                print(maxTemp)
+//                print(lastTemp)
+//                print(Util.convertUnixTimeToDate(timeIntervalSince1970: lastTested!))
+                let tempDifference = Util.compareTemperatureDifference(mapTemp: maxTemp!, currentTemp: lastTemp!)
+                self.handleAlert(title: "Observe Message", message: "Last observed temperature at \(Util.convertUnixTimeToDate(timeIntervalSince1970: lastTested!)). Highest tolerance temperature: \(maxTemp!). Temperature difference: \(tempDifference)", actionTitle: "Sure", preferredStyle: .alert, preferredActionStyle: .default)
+            }
+            // colour temperature
+            if indexPath.row == 1 {
+                self.handleAlert(title: "Observe Message", message: "Last observed colour temperature at \(Util.convertUnixTimeToDate(timeIntervalSince1970: lastTested!))", actionTitle: "Sure", preferredStyle: .alert, preferredActionStyle: .default)
+            }
+            // brightness
+            if indexPath.row == 2 {
+                print(proLux)
+                let brightnessDifference = Util.campareBrightnessDifference(designedBrightness: proLux!, currentBrightness: lastBrightness!)
+                self.handleAlert(title: "Observe Message", message: "Last observed brightness at \(Util.convertUnixTimeToDate(timeIntervalSince1970: lastTested!)). Highest brightness: \(proLux!) Lux. Brightness difference: \(brightnessDifference) Lux", actionTitle: "Sure", preferredStyle: .alert, preferredActionStyle: .default)
+            }
         }
     }
     
@@ -111,61 +146,14 @@ class ProjectorInfoTableViewController: UITableViewController {
         }
         return 55
     }
-    // MARK: - Table view data source
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    func handleAlert(title: String, message: String, actionTitle: String, preferredStyle: UIAlertController.Style, preferredActionStyle: UIAlertAction.Style){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
+        alert.addAction(UIAlertAction(title: actionTitle, style: preferredActionStyle, handler: nil))
+        self.present(alert, animated: true)
     }
-    */
+    
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
