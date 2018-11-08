@@ -204,7 +204,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "96"
             endingLineNumber = "96"
-            landmarkName = "tableView(_:accessoryButtonTappedForRowWith:)"
+            landmarkName = "getTempData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

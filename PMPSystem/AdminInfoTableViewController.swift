@@ -68,11 +68,17 @@ class AdminInfoTableViewController: UITableViewController, UITextFieldDelegate, 
         let street = streetTextField.text
         let suburb = suburbTextField.text
         let state = stateTextField.text
+        if (fisrtName == "" || lastName == "" || street == "" || suburb == "" || state == ""){
+            let alert = UIAlertController(title: "Error", message: "Some fields are not in proper format", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Sure", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }else{
         let values = ["firstName": fisrtName, "lastName": lastName, "street": street, "suburb": suburb, "state": state]
         // update the admin info
         handleUpdateAdminInfo(values as [String : AnyObject])
         // Pops the top view controller from the navigation stack and updates the display.
         navigationController?.popViewController(animated: true)
+        }
     }
     
     @objc func dissmissKeyBoard(){

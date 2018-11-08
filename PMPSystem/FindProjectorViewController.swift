@@ -26,6 +26,9 @@ class FindProjectorViewController: UIViewController, MKMapViewDelegate {
         handleProjectors()
         addADoneButton()
         observeInUseStatusChange()
+        navigationItem.leftBarButtonItem?.tintColor = .white
+        navigationController?.navigationBar.tintColor = .white
+        navigationItem.rightBarButtonItem?.tintColor = .white
         
     }
     

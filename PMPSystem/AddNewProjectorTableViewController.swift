@@ -260,11 +260,15 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
     @objc func doneSave(){
         guard let brand = projectorNameTextField.text, let type = projectorTypeTextField.text, let date = dateTextField.text, let location = locationTextField.text, let lampType = lightSourceTextField.text, let maxLux = maximumLuxTextField.text, let alias = projectorAliasTextField.text, let tempText = operatingTempTextField.text, let power = powerConsumTextField.text, let locationLat = self.locationLat, let locationLng = self.locationLng, let sensor = self.projectorAssociatedSensorTextField.text else {
             print("Add projector no enough info")
+             // if some fields are empty, then give user a alert controller
+            let alert = UIAlertController(title: "Error", message: "Some fields are not in proper format", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Sure", style: .default, handler: nil))
+            self.present(alert, animated: true)
             return
         }
         
         if brand == "" || type == "" || date == "" || location == "" || lampType == "" || maxLux == "" || alias == "" || tempText == "" || power == "" {
-            // if some fields are empty, then give user a alert controller
+           
             let alert = UIAlertController(title: "Error", message: "Some fields are not in proper format", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Sure", style: .default, handler: nil))
             self.present(alert, animated: true)
@@ -504,6 +508,13 @@ class AddNewProjectorTableViewController: UITableViewController,UITextFieldDeleg
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
         dismiss(animated: true, completion: nil)
+    }
+    
+    private func displayDefaultAlert(alertTitle: String, alertMessage: String, actionTitle: String){
+        let controller = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: actionTitle, style: .default, handler: nil)
+        controller.addAction(yesAction)
+        present(controller, animated: true, completion:  nil)
     }
     
 //    @IBAction func handleLocationButton(_ sender: Any) {
